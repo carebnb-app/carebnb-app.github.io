@@ -88,8 +88,8 @@
 							<div class="row">
 								<div class="col-md-6 col-sm-9">
 									<h1 class="text-white">Airbnb automation from top to bottom. The peace of mind you’ve always wanted.</h1>
-									<a target="_blank" href="#" class="btn btn-primary btn-white">Watch the overview</a>
-									<a href="#" class="btn btn-primary btn-filled">Download now</a>
+									<a target="_blank" href="#" class="btn btn-primary btn-white playvideo" data-toggle="modal" data-target="#video-overview">Watch the overview</a>
+									<a href="#" class="btn btn-primary btn-filled">Get notified</a>
 								</div>
 							</div>
 						</div>
@@ -166,11 +166,7 @@
 			</section>
 			
 			<section class="action-banner overlay">
-			
-				<div class="background-image-holder">
-					<img class="background-image" alt="Background Image" src="img/hero3.jpg">
-				</div>
-				
+	
 				<div class="container">
 
 					<div class="row">
@@ -381,8 +377,21 @@
 			</footer>
 
 		</div>
+
+
+		<div class="modal fade" id="video-overview" tabindex="-1" role="dialog" aria-labelledby="video-overview" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-body">
+		        <div class="video-wrapper">
+					<video class="videoad" preload="none" controls>
+						<source type="video/mp4" src="videos/carebnb.mp4">
+					</video>
+				</div>
+		    </div>
+		  </div>
+		</div>
 				
-		<script src="https://www.youtube.com/iframe_api"></script>
 		<script src="js/jquery.min.js"></script>
         <script src="js/jquery.plugin.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -396,5 +405,23 @@
         <script src="js/lightbox.min.js"></script>
         <script src="js/jquery.countdown.min.js"></script>
         <script src="js/scripts.js"></script>
+
+        <script type="text/javascript">
+			const modalvideo = document.getElementById('video-overview');
+			console.log(modalvideo);
+			const videoad = document.querySelector('.videoad');
+			const playvideo = document.querySelector('.playvideo');
+
+			playvideo.addEventListener('click', function(){
+				videoad.play();
+			});
+
+			$(document).ready(function(){
+				$(modalvideo).on('hide.bs.modal',function(){
+					videoad.pause();
+				});
+			});
+			
+		</script>
     </body>
 </html>
