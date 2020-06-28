@@ -49,6 +49,7 @@ footer{padding:40px 0 0 0;}
 }
 
 @media screen and (max-width:770px){
+.fullscreen-nav-container .menu li a{font-size:30px;line-height:1.8;}
 .steps .arrow-left,.steps .arrow-left-nothing{display:none;}
 .steps .arrow-down{display:block;padding-top:40px;}
 .steps .icon{font-size:3em;padding-bottom:10px;padding-top:50px;}
