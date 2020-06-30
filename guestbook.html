@@ -30,6 +30,10 @@
 			  <div class="double-bounce2"></div>
 			</div>
     	</div>
+
+    	<!-- <section class="search">
+    		
+    	</section> -->
 				
 		<div class="nav-container">
 			<nav class="fullscreen-nav overlay-bar">
@@ -83,8 +87,8 @@
 							<span class="text-white alt-font">Carebnb's guestbook</span>
 							<h1 class="text-white">All over the world, our guestbook <br>is about your story.</h1>
 							<p class="lead text-white">We care about your experience. Share yours.</p>
-							<a target="_blank" href="http://www.mediumra.re/pivot/variant/builder.html" class="btn btn-primary btn-white">See ohters stories</a>
-							<a href="#" class="btn btn-primary btn-filled">Write your own</a>
+							<a href="#" class="btn btn-primary btn-white view-stories">View stories</a>
+							<a href="#" class="btn btn-primary btn-filled write-your-own">Write your own</a>
 						</div>
 					</div>
 				</div>
@@ -129,16 +133,25 @@
 			console.log(modalvideo);
 			const videoad = document.querySelector('.videoad');
 			const playvideo = document.querySelector('.playvideo');
+			const writeyourown = document.querySelector('.write-your-own');
+			const searchbox = document.querySelector('.search');
 
 			playvideo.addEventListener('click', function(){
 				videoad.play();
 			});
 
+			// writeyourown.addEventListener('click', function(){
+			// 	searchbox.style.display = 'block';
+			// });
+
 			$(document).ready(function(){
+				
 				$(modalvideo).on('hide.bs.modal',function(){
 					videoad.pause();
 				});
+
 			});
+
 			
 		</script>
     </body>
