@@ -21,6 +21,7 @@ html{scroll-behavior: smooth;}
 /*.bg-secondary-1{background:#282828 !important;}*/
 .strip h3{top:6px;}
 .strip .signup-email-field{top:0;}
+.videoad{cursor:pointer;}
 footer.details{background:none;color:#ffffff;}
 footer.details .logo {max-width:160px;}
 /*footer{padding:40px 0 0 0;}*/
