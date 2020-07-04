@@ -116,7 +116,13 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="fullwidth-video">
-								{% include videooverview.html id=page.6aXhuEN8Gzk %}
+								<center>
+									<video class="videoad" preload="yes">
+										<source type="video/mp4" src="videos/carebnb.mp4">
+									</video>
+								</center>
+								<!-- <iframe width="100%" height="315" src="http://www.youtube.com/embed/6aXhuEN8Gzk?showinfo=0&amp;rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen=""></iframe> -->
+								<!-- {% include videooverview.html id=page.6aXhuEN8Gzk %} -->
 							</div>
 						</div>
 					</div>
@@ -435,12 +441,17 @@
         <script type="text/javascript">
 			// const modalvideo = document.getElementById('video-overview');
 			// console.log(modalvideo);
-			// const videoad = document.querySelector('.videoad');
+			const videoad = document.querySelector('.videoad');
 			// const playvideo = document.querySelector('.playvideo');
 
-			// playvideo.addEventListener('click', function(){
-			// 	videoad.play();
-			// });
+			videoad.addEventListener('click', function(){
+				// videoad.setAttribute('controls','yes');
+				if(videoad.paused){
+					videoad.play();
+				} else{
+					videoad.pause();
+				}
+			});
 
 			// $(document).ready(function(){
 			// 	$(modalvideo).on('hide.bs.modal',function(){
