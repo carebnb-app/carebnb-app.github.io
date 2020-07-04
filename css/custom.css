@@ -1,4 +1,6 @@
 *{font-family: 'Oxygen', sans-serif;}
+html{scroll-behavior: smooth;}
+.hero-slider .slides li{height:530px !important;}
 .overlay:before{background:#EB5757;}
 .bg-primary{background-color:#EB5757 !important;}
 .pricing-table.emphasis{background-color:#EB5757 !important;}
@@ -19,6 +21,7 @@
 /*.bg-secondary-1{background:#282828 !important;}*/
 .strip h3{top:6px;}
 .strip .signup-email-field{top:0;}
+footer.details{background:none;color:#ffffff;}
 footer.details .logo {max-width:160px;}
 /*footer{padding:40px 0 0 0;}*/
 
