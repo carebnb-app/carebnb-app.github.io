@@ -1,0 +1,1 @@
+~/Documents/ffmpeg/ffmpeg -i header-raw.mp4 -filter_complex "[0]reverse[r];[0][r]concat,loop=0:250,setpts=N/25/TB" header.mp4
