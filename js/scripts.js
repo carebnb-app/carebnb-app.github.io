@@ -347,7 +347,7 @@ $(document).ready(function(){
             
             jQuery.ajax({
                 type: "POST",
-                url: "http://guilardi.com.br/carebnb/mail.php",
+                url: "https://guilardi.com.br/carebnb/mail.php",
                 data: thisForm.serialize(),
                 success: function (response) {
                 	// Swiftmailer always sends back a number representing numner of emails sent.
