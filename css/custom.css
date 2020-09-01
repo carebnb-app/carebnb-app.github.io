@@ -42,6 +42,10 @@ footer{padding-top: 0px; padding-bottom: 0px;}
 
 .search{position:absolute;width:100%;height:100%;z-index:99;background:black !important;opacity:0.9;display:none;}
 
+#getnotified .photo-form-wrapper{margin-bottom: 0px;}
+#getnotified .photo-form-wrapper .form-email{color:#333;}
+#getnotified .g-recaptcha{max-width: 303px; margin-left:auto; margin-right: auto; margin-bottom:20px;}
+
 @media screen and (max-width:1180px){
 .steps .arrow-left{left:160px;}
 .steps .arrow-left-nothing{left:300px;}
