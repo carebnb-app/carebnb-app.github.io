@@ -47,10 +47,6 @@ $(document).ready(function(){
 		$('.top-bar .logo').addClass('logo-square');
 	}
 	
-	// Smooth scroll
-	
-	$('.inner-link').smoothScroll({offset: -96, speed: 800});
-	
 	// Mobile Toggle
 	
 	$('.mobile-toggle').click(function(){
@@ -137,15 +133,6 @@ $(document).ready(function(){
         });
     });
 
-	
-	// Scroll Reveal
-	
-	if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-       window.scrollReveal = new scrollReveal();
-    }else{
-    	$('body').addClass('pointer');
-    }
-
 	// Slider Initializations
 	
 	$('.hero-slider').flexslider({});
@@ -190,56 +177,6 @@ $(document).ready(function(){
 		$(this).parent('.accordion').children('li').removeClass('active');
 		$(this).addClass('active');
 	});
-	
-	/************** Parallax Scripts **************/
-
-    var isFirefox = typeof InstallTrigger !== 'undefined';
-    var isIE = /*@cc_on!@*/ false || !!document.documentMode;
-    var isChrome = !!window.chrome;
-    var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-    var prefix;
-
-    if (isFirefox) {
-        prefix = '-moz-';
-    } else if (isIE) {
-
-    } else if (isChrome || isSafari) {
-        prefix = '-webkit-';
-    }
-
-    $('.main-container section:first-child').addClass('first-child');
-
-    $('.parallax-background').each(function () {
-
-        if ($(this).closest('section').hasClass('first-child') && !$(this).closest('section').hasClass('slider-fullscreen')) {
-            $(this).attr('data-top', prefix + 'transform: translate3d(0px,0px, 0px)');
-            $(this).attr('data-top-bottom', prefix + 'transform: translate3d(0px,200px, 0px)');
-
-        } else {
-
-            $(this).attr('data-bottom-top', prefix + 'transform: translate3d(0px,-100px, 0px)');
-            $(this).attr('data-center', prefix + 'transform: translate3d(0px,0px, 0px)');
-            $(this).attr('data-top-bottom', prefix + 'transform: translate3d(0px,100px, 0px)');
-
-        }
-
-    });
-    
-    if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-        skrollr.init({
-            forceHeight: false
-        });
-        
-        // Multi Layer Parallax
-    
-		$('.hover-background').each(function(){
-			$(this).mousemove(function( event ) {
-				$(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX /30 + 'px,' + -event.pageY /45+ 'px)');
-				$(this).find('.layer-1').css('transform', 'translate(' + -event.pageX /50 + 'px,' + -event.pageY /50+ 'px)');
-				$(this).find('.layer-2').css('transform', 'translate(' + -event.pageX /60 + 'px,' + -event.pageY /60+ 'px)');
-			});
-		});
-    }
     
     // Map Holder Overlay
 	
