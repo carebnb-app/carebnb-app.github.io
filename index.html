@@ -117,6 +117,75 @@
 					
 					<div class="row">
 						<div class="text-center">
+							<h1>Automatic check in check out</h1>
+							<p class="lead">
+								Fully automated check in check out.
+								Make money doing nothing.
+							</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div
+								class="scrollme animateme col-sm-4"
+								data-when="enter" 
+								data-from="0.75" 
+								data-to="0" 
+								data-opacity="0" >
+							<div id="lottie-hotel"></div>
+						</div>
+					
+						<div class="col-sm-8 align-vertical no-align-mobile clearfix">
+
+							<div 
+									class="scrollme animateme col-md-6 no-pad-left clearfix"
+									data-when="enter" 
+									data-from="0.75" 
+									data-to="0" 
+									data-opacity="0" 
+									data-translatex="100" >
+								<div class="feature feature-icon-small">
+									<i class="icon icon-lock"></i>
+									<h6>Custom access codes</h6>
+									<p>
+										Carebnb <strong>detects</strong> Airbnb reservations and <strong>automatically</strong>
+										deals with common guest requests.
+									</p>
+								</div>
+							</div>
+						
+							<div 
+									class="scrollme animateme col-md-6 no-pad-left clearfix"
+									data-when="enter" 
+									data-from="0.75" 
+									data-to="0" 
+									data-opacity="0" 
+									data-translatex="200" >
+								<div class="feature feature-icon-small">
+									<i class="icon icon-chat"></i>
+									<h6>Messaging</h6>
+									<p>
+										Our prorietary AI algorithm <strong>detects</strong> Guests common requests and <strong>automatically</strong>
+										deals with them.
+									</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				
+				</div>
+			</section>
+
+
+
+
+
+			<section>
+				<div class="container">
+					
+					<div class="row">
+						<div class="text-center">
 							<h1>Custom access codes</h1>
 							<p>Automatically secured access codes with Reagle™</p>
 							<p class="lead">
@@ -580,7 +649,7 @@
 			</footer>
 
 		</section>
-				
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js" integrity="sha512-35O/v2b9y+gtxy3HK+G3Ah60g1hGfrxv67nL6CJ/T56easDKE2TAukzxW+/WOLqyGE7cBg0FR2KhiTJYs+FKrw==" crossorigin="anonymous"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.plugin.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -591,7 +660,7 @@
 		<script src="js/lightbox.min.js"></script>
 		<script src="js/jquery.countdown.min.js"></script>
 		<script src="js/scrollme.min.js"></script>
-		<script src="js/scripts.js?v=1"></script>
+		<script src="js/scripts.js?v=2"></script>
 
 		<script type="text/javascript">
 			const videoad = document.querySelector('.videoad');
@@ -602,6 +671,36 @@
 				} else{
 					videoad.pause();
 				}
+			});
+
+			$(document).ready(function(){
+
+				// var url = "./lottie/hotel-bell.json";
+				$.ajax({url: "https://assets1.lottiefiles.com/packages/lf20_5ohCYt.json", success: function(lottieHotelBell){
+					var lottieHotelBell = lottie.loadAnimation({
+						container: document.querySelector('#lottie-hotel'),
+						renderer: 'svg',
+						loop: true,
+						autoplay: false,
+						animationData: lottieHotelBell, 
+						rendererSettings: {
+							clearCanvas: false,
+							progressiveLoad: false
+						}
+					});
+
+					var isPlaying = false;
+					document.addEventListener('scroll', function (event) {
+						if(isVisible($('#lottie-hotel'), 250)){
+							if(!isPlaying){
+								isPlaying = true;
+								lottieHotelBell.play();
+							}
+						}
+					});
+
+				}});
+
 			});
 		</script>
 

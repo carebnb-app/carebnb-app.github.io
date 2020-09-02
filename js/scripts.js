@@ -522,3 +522,12 @@ function onYouTubeIframeAPIReady() {
 	});
 	
 }
+
+// @see https://infoheap.com/jquery-check-if-element-is-visible-in-viewport/
+function isVisible($el, offset=0) {
+  var winTop = $(window).scrollTop();
+  var winBottom = winTop + $(window).height();
+  var elTop = $el.offset().top;
+	var elBottom = elTop + $el.height();
+  return ((elBottom - offset <= winBottom) && (elTop + offset >= winTop));
+}
