@@ -25,6 +25,7 @@ html{scroll-behavior: smooth;}
 footer.details{background:none;color:#ffffff;}
 footer.details .logo {max-width:160px;margin-bottom: 30px;margin-top: 0px;}
 footer{padding-top: 0px; padding-bottom: 0px;}
+.scrollme{opacity: 0;}
 
 .fullscreen-nav-container{background:rgba(235, 87, 87, 1);}
 .fullscreen-nav-container .menu li a{font-size:40px;line-height:1.8;}
