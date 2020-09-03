@@ -9,8 +9,8 @@ section {padding-top: 50px;padding-bottom: 50px;}
 .btn-primary.btn-filled{background:#EB5757;}
 .btn-primary{border:2px solid #EB5757;color:#EB5757;}
 .btn-primary:hover{border:2px solid #FFFFFF;background:#EB5757;}
-.home .btn-primary{border:2px solid #FFFFFF;color:#FFFFFF;}
-.home .btn-primary:hover{border:2px solid #FFFFFF;background:#EB5757;}
+.btn-primary.btn-white{border:2px solid #FFFFFF;color:#FFFFFF;}
+.btn-primary.btn-white:hover{color:#EB5757;background:#FFFFFF;}
 .fullscreen-nav .outer-logo{max-height:60px;margin:20px 0;}
 .top-bar .logo{max-width:155px;}
 .overlay-bar.nav-sticky .menu li a{color:#ffffff;}

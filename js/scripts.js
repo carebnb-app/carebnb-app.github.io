@@ -477,7 +477,7 @@ function isVisibleOrHasPassed($el) {
 }
 
 var dynamicContentLoadingCount = 0
-function setupDynamicSegment(name, callback=null, javascripts=null, csss=null){
+function setupDynamicSegment(name, callback=null, javascripts=null, csss=null, instant=false){
 	var isLoaded = false;
 
 	var finishAction = function(){
@@ -490,37 +490,47 @@ function setupDynamicSegment(name, callback=null, javascripts=null, csss=null){
 		}
 	}
 
-	var action = function (event) {
+	var detectScroll = function () {
 		if(isVisibleOrHasPassed($('#section-' +name+ '-trigger'))){
-			if(!isLoaded){
-				isLoaded = true;
-				dynamicContentLoadingCount++;
-				document.removeEventListener('scroll', action);
-				$('#section-'+name+'-holder').load('segments/' +name+ '.html', function(){
-					if(csss){
-						for(var i =0; i < csss.length; i++){
-							var css = csss[i];
-							$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', css) );
-						}
-					}
-					if(javascripts){
-						var jsToLoadCount = javascripts.length;
-						for(var i =0; i < javascripts.length; i++){
-							var javascript = javascripts[i];
-							$.getScript(javascript, function(){
-								jsToLoadCount--;
-								if(jsToLoadCount == 0){
-									finishAction();
-								}
-							});
-						}
-					}
-					else{
-						finishAction();
-					}
-				});
-			}
+			loadContent();
 		}
 	}
-	document.addEventListener('scroll', action);
+
+	var loadContent = function(){
+		if(!isLoaded){
+			isLoaded = true;
+			dynamicContentLoadingCount++;
+			document.removeEventListener('scroll', detectScroll);
+			$('#section-'+name+'-holder').load('segments/' +name+ '.html', function(){
+				if(csss){
+					for(var i =0; i < csss.length; i++){
+						var css = csss[i];
+						$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', css) );
+					}
+				}
+				if(javascripts){
+					var jsToLoadCount = javascripts.length;
+					for(var i =0; i < javascripts.length; i++){
+						var javascript = javascripts[i];
+						$.getScript(javascript, function(){
+							jsToLoadCount--;
+							if(jsToLoadCount == 0){
+								finishAction();
+							}
+						});
+					}
+				}
+				else{
+					finishAction();
+				}
+			});
+		}
+	}
+
+	if(instant){
+		loadContent()
+	}
+	else{
+		document.addEventListener('scroll', detectScroll);
+	}
 }

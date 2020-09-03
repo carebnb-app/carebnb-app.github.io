@@ -2359,7 +2359,6 @@ input[type="submit"] {
   outline: none;
 }
 .photo-form-wrapper input[type="submit"] {
-  color: #fff !important;
   font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 11px;
