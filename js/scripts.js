@@ -510,7 +510,6 @@ function setupDynamicSegment(name, callback=null, javascripts=null, csss=null){
 			callback();
 		}
 		if(dynamicContentLoadingCount == 0){
-			console.log(name)
 			scrollme.init();
 		}
 	}

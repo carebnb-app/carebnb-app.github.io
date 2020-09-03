@@ -178,177 +178,40 @@
 
 			<div id="section-automation-top-bottom-trigger"></div>
 
-			
+
 			<section id="section-smart-info-board-holder"></section>
+
+
+			<div id="section-main-capabilities-trigger"></div>
 
 
 			<section id="section-automation-top-bottom-holder"></section>
 
 			
-			<section class="duplicatable-content">
-			
-				<div class="container">
-					<div class="row">
-						<div
-								class="scrollme animateme col-md-12 text-center"
-								data-when="enter" 
-								data-from="0.5" 
-								data-to="0" 
-								data-crop="false" 
-								data-opacity="0"
-								data-scale="1.3">
-							<h1>Carebnb main capabilities includes:</h1>
-						</div>
-					</div>
-		
-					<div class="row">
-						<div 
-								class="scrollme animateme col-md-4 col-sm-4"
-								data-when="enter" 
-								data-from="0.75" 
-								data-to="0" 
-								data-opacity="0" 
-								data-translatex="100">
-							<div class="feature feature-icon-large text-center">
-								<i class="icon icon-key"></i>
-								<br>
-								<br>
-								<h5>Easy auto-generated lock codes</h5>
-								<p>
-									Our technology generates temporary access
-									<br>codes directly with your property’s locks.
-								</p>
-							</div>
-						</div>
-					
-						<div 
-								class="scrollme animateme col-md-4 col-sm-4"
-								data-when="enter" 
-								data-from="0.75" 
-								data-to="0" 
-								data-opacity="0" 
-								data-translatex="200">
-							<div class="feature feature-icon-large text-center">
-								<i class="icon icon-gears"></i>
-								<br>
-								<br>
-								<h5>Impressive guestbook automation</h5>
-								<p>
-									Our proprietary guestbook system<br>will <strong>WOW</strong> your guests.
-								</p>
-							</div>
-						</div>
-					
-						<div 
-								class="scrollme animateme col-md-4 col-sm-4"
-								data-when="enter" 
-								data-from="0.75" 
-								data-to="0" 
-								data-opacity="0" 
-								data-translatex="300">
-							<div class="feature feature-icon-large text-center">
-								<i class="icon icon-basket"></i>
-								<br>
-								<br>
-								<h5>Auto schedule turnover cleaning</h5>
-								<p>
-									Carebnb is fully integrated with House Call Pro:<br><strong>#1 Field Service Management Software.</strong>
-								</p>
-							</div>
-						</div>
-					
-					</div>
-				</div>
-			
-			</section>
+			<div id="section-reliable-system-trigger"></div>
 
 
+			<section id="section-main-capabilities-holder" class="duplicatable-content"></section>
 
 
+			<div id="section-efficiency-finest-trigger"></div>
 
-			
+
 			<section
-					class="scrollme animateme hero-divider"
+					id="section-reliable-system-holder"
+					class="hero-divider scrollme animateme"
 					data-when="enter" 
 					data-from="0.5" 
 					data-to="0" 
 					data-crop="false" 
 					data-opacity="0"
-					data-scale="1.5">
-			
-				<picture class="background-image-holder">
-					<source srcset="images/video-mobile.webp" type="image/webp">
-					<source srcset="images/video-mobile.jpg" type="image/jpeg"> 
-					<img class="background-image" src="images/video-mobile.webp" alt="">
-				</picture>
-				
-				<div class="container">
-					<div class="row">	
-						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-							<h1 class="text-white bold">A reliable system</h1>
-							<p class="lead lead-video text-white">
-								Carebnb is a fail-safe system built over cutting-edge technology.<br>With multiple methods to integrate 3rd party systems, our clients are safe at trusting a state-of-the-art system.
-							</p>
-							<!-- <a href="#" class="btn btn-white btn-primary">See More</a> -->
-							<!-- <a href="#" class="btn btn-primary btn-filled">Purchase</a> -->
-						</div>
-					</div>
-				</div>
-			</section>
+					data-scale="1.5"></section>
 
 
 			<div id="section-get-notified-trigger"></div>
 
 			
-			<section class="duplicatable-content">
-			
-				<div class="container">
-		
-					<div class="row">
-						<div
-								class="scrollme animateme col-sm-6"
-								data-when="enter" 
-								data-from="0.75" 
-								data-to="0" 
-								data-opacity="0" 
-								data-translatex="100">
-							<div class="feature feature-icon-large">
-								<div class="pull-left">
-									<i class="icon icon_lock-open"></i>
-								</div>
-								<div class="pull-right">
-									<h5>Efficiency at it's finest</h5>
-									<p>
-										Crush competitors.<br>Be more efficient by outsourcing common BNB tasks.
-									</p>
-								</div>
-							</div>
-						</div>
-						
-						<div
-								class="scrollme animateme col-sm-6"
-								data-when="enter" 
-								data-from="0.75" 
-								data-to="0" 
-								data-opacity="0" 
-								data-translatex="200">
-							<div class="feature feature-icon-large">
-								<div class="pull-left">
-									<i class="icon icon_star"></i>
-								</div>
-								<div class="pull-right">
-									<h5>Improved ratings</h5>
-									<p>
-										Impressed guests tend to give better ratings.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			
-			</section>
-
+			<section id="section-efficiency-finest-holder" class="duplicatable-content"></section>
 
 
 			<section id="section-get-notified-holder" class="bg-primary"></section>
@@ -470,6 +333,19 @@
 						}
 					});
 				});
+
+				setupDynamicSegment('main-capabilities');
+
+				setupDynamicSegment('reliable-system', function(){
+					$('#section-reliable-system-holder .background-image-holder').each(function(){
+						var imgSrc= $(this).children('img').attr('src');
+						$(this).css('background', 'url("' + imgSrc + '")');
+							$(this).children('img').hide();
+								$(this).css('background-position', '50% 0%');
+					});
+				});
+
+				setupDynamicSegment('efficiency-finest');
 
 				setupDynamicSegment('get-notified', function(){
 					$('form.mail-list-signup').on('submit', function(){
