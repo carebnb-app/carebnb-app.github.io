@@ -100,7 +100,7 @@ var scrollme = ( function( $ )
 	// ----------------------------------------------------------------------------------------------------
 	// Initialisation
 
-	_this.init = function()
+	_this.init = function(targetElem)
 	{
 		// Cancel if initialisation conditions not met
 
@@ -108,7 +108,7 @@ var scrollme = ( function( $ )
 
 		// Load all elements to animate
 
-		_this.init_elements();
+		_this.init_elements(targetElem);
 
 		// Get element & viewport sizes
 
@@ -132,11 +132,13 @@ var scrollme = ( function( $ )
 	// ----------------------------------------------------------------------------------------------------
 	// Get list and pre-load animated elements
 
-	_this.init_elements = function()
+	_this.init_elements = function(targetElem)
 	{
 		// For each reference element
 
-		$( _this.scrollme_selector ).each( function()
+		var targets = targetElem ? targetElem : $( _this.scrollme_selector )
+
+		targets.each( function()
 		{
 			var element = {};
 

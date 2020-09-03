@@ -476,22 +476,19 @@ function isVisibleOrHasPassed($el) {
   return (elBottom <= winBottom);
 }
 
-var dynamicContentLoadingCount = 0
-function setupDynamicSegment(name, callback=null, javascripts=null, csss=null, instant=false){
+
+function setupLazySection(targetElem, triggerElem, callback=null, dynLoad={csss: null, javascripts: null}){
 	var isLoaded = false;
 
 	var finishAction = function(){
-		dynamicContentLoadingCount--;
 		if(callback){
 			callback();
 		}
-		if(dynamicContentLoadingCount == 0){
-			scrollme.init();
-		}
+		scrollme.init(targetElem);
 	}
 
 	var detectScroll = function () {
-		if(isVisibleOrHasPassed($('#section-' +name+ '-trigger'))){
+		if(isVisibleOrHasPassed(triggerElem)){
 			loadContent();
 		}
 	}
@@ -499,38 +496,30 @@ function setupDynamicSegment(name, callback=null, javascripts=null, csss=null, i
 	var loadContent = function(){
 		if(!isLoaded){
 			isLoaded = true;
-			dynamicContentLoadingCount++;
 			document.removeEventListener('scroll', detectScroll);
-			$('#section-'+name+'-holder').load('segments/' +name+ '.html', function(){
-				if(csss){
-					for(var i =0; i < csss.length; i++){
-						var css = csss[i];
-						$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', css) );
-					}
+			if(dynLoad.csss){
+				for(var i =0; i < dynLoad.csss.length; i++){
+					var css = dynLoad.csss[i];
+					$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', css) );
 				}
-				if(javascripts){
-					var jsToLoadCount = javascripts.length;
-					for(var i =0; i < javascripts.length; i++){
-						var javascript = javascripts[i];
-						$.getScript(javascript, function(){
-							jsToLoadCount--;
-							if(jsToLoadCount == 0){
-								finishAction();
-							}
-						});
-					}
+			}
+			if(dynLoad.javascripts){
+				var jsToLoadCount = dynLoad.javascripts.length;
+				for(var i =0; i < dynLoad.javascripts.length; i++){
+					var javascript = dynLoad.javascripts[i];
+					$.getScript(javascript, function(){
+						jsToLoadCount--;
+						if(jsToLoadCount == 0){
+							finishAction();
+						}
+					});
 				}
-				else{
-					finishAction();
-				}
-			});
+			}
+			else{
+				finishAction();
+			}
 		}
 	}
 
-	if(instant){
-		loadContent()
-	}
-	else{
-		document.addEventListener('scroll', detectScroll);
-	}
+	document.addEventListener('scroll', detectScroll);
 }
