@@ -334,35 +334,22 @@
 
 			$(document).ready(function(){
 
+
+
+				const videoad = document.querySelector('.videoad');
+				videoad.addEventListener('click', function(){
+					if(videoad.paused){
+						videoad.play();
+					} else{
+						videoad.pause();
+					}
+				});
+
 				// Lazy start sections
 				var sections = $('section');
 				sections.each(function(i, currSection){
 					var nextSection = sections[i + 1];
 					if(!nextSection || !nextSection.id) return;
-
-
-					if(nextSection.id == 'section-smart-info-board'){
-						setupLazySection($(nextSection), $(currSection), function(){
-							$('#section-smart-info-board .image-slider').flexslider({ animation: "slide"});
-						}, {
-							javascripts: ['js/jquery.flexslider-min.js'],
-							csss: ['css/flexslider.min.css']
-						});
-					}
-
-
-					else if(nextSection.id == 'section-automation-top-bottom'){
-						setupLazySection($(nextSection), $(currSection), function(){
-							const videoad = document.querySelector('.videoad');
-							videoad.addEventListener('click', function(){
-								if(videoad.paused){
-									videoad.play();
-								} else{
-									videoad.pause();
-								}
-							});
-						});
-					}
 
 
 					else if(nextSection.id == 'section-get-notified'){
