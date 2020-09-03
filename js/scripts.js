@@ -500,12 +500,26 @@ function isVisibleOrHasPassed($el) {
   return (elBottom <= winBottom);
 }
 
+var dynamicContentLoadingCount = 0
 function setupDynamicSegment(name, callback=null, javascripts=null, csss=null){
 	var isLoaded = false;
+
+	var finishAction = function(){
+		dynamicContentLoadingCount--;
+		if(callback){
+			callback();
+		}
+		if(dynamicContentLoadingCount == 0){
+			console.log(name)
+			scrollme.init();
+		}
+	}
+
 	var action = function (event) {
 		if(isVisibleOrHasPassed($('#section-' +name+ '-trigger'))){
 			if(!isLoaded){
 				isLoaded = true;
+				dynamicContentLoadingCount++;
 				document.removeEventListener('scroll', action);
 				$('#section-'+name+'-holder').load('segments/' +name+ '.html', function(){
 					if(csss){
@@ -520,16 +534,15 @@ function setupDynamicSegment(name, callback=null, javascripts=null, csss=null){
 							var javascript = javascripts[i];
 							$.getScript(javascript, function(){
 								jsToLoadCount--;
-								if(jsToLoadCount == 0 && callback){
-									callback();
+								if(jsToLoadCount == 0){
+									finishAction();
 								}
 							});
 						}
 					}
-					else if(callback){
-						callback();
+					else{
+						finishAction();
 					}
-					scrollme.init();
 				});
 			}
 		}
