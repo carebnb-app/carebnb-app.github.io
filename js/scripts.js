@@ -203,43 +203,6 @@ $(document).ready(function(){
 		$(this).closest('.map-overlay').addClass('fade-overlay');
 	}).mouseleave(function(){$(this).closest('.map-overlay').removeClass('fade-overlay');});
 	
-	// Countdown
-	
-	$('.countdown').each(function(){
-		$(this).countdown({until: new Date($(this).attr('data-date'))});
-	});
-
-    // Twitter Feed
-       jQuery('#tweets').each(function(index) {
-       }).each(function(index) {
-           
-           var TweetConfig = {
-               "id": jQuery('#tweets').attr('data-widget-id'),
-               "domId": '',
-               "maxTweets": 5,
-               "enableLinks": true,
-               "showUser": false,
-               "showTime": false,
-               "dateFunction": '',
-               "showRetweet": false,
-               "customCallback": handleTweets
-           };
-           function handleTweets(tweets) {
-               var x = tweets.length;
-               var n = 0;
-               var element = document.getElementById('tweets');
-               var html = '<ul class="slides">';
-               while (n < x) {
-                   html += '<li>' + tweets[n] + '</li>';
-                   n++;
-               }
-               html += '</ul>';
-               element.innerHTML = html;
-               return html;
-           }
-           twitterFetcher.fetch(TweetConfig);
-       });
-	
 	
 	// Expanding Lists (updated in Pivot 1.4.0)
 	
@@ -292,27 +255,6 @@ $(window).load(function(){
 		  gutter: 0
 		}
 	});
-	
-	// Instagram Feed
-	
-	if($('.instafeed').length){
-		jQuery.fn.spectragram.accessData = {
-			accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
-			clientID: 'fedaafacf224447e8aef74872d3820a1'
-		};
-
-		$('.instafeed').each(function () {
-			$(this).children('ul').spectragram('getUserFeed', {
-				query: $(this).attr('data-user-name')
-			});
-
-		});
-		
-	}
-	
-    // if($('#tweets').length){
-    // 	$('#tweets').flexslider({ directionNav: false, controlNav: false });
-    // }
     
     // Remove Loader
     
@@ -340,19 +282,6 @@ $(window).load(function(){
 
 
 });
-
-function handleTweets(tweets){
-          var x = tweets.length;
-          var n = 0;
-          var element = document.getElementById('tweets');
-          var html = '<ul class="slides">';
-          while(n < x) {
-            html += '<li>' + tweets[n] + '</li>';
-            n++;
-          }
-          html += '</ul>';
-          element.innerHTML = html;
-    }
 
 function alignVertical(){
 
