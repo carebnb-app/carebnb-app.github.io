@@ -484,7 +484,9 @@ function setupLazySection(targetElem, triggerElem, callback=null, dynLoad={csss:
 		if(callback){
 			callback();
 		}
-		scrollme.init(targetElem);
+		if(typeof scrollme !== 'undefined'){
+			scrollme.init(targetElem);
+		}
 	}
 
 	var detectScroll = function () {
