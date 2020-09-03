@@ -1,5 +1,7 @@
 *{font-family: 'Oxygen', sans-serif;}
 html{scroll-behavior: smooth;}
+
+section {padding-top: 50px;padding-bottom: 50px;}
 .hero-slider .slides li{height:530px !important;}
 .overlay:before{background:#EB5757;}
 .bg-primary{background-color:#EB5757 !important;}
@@ -14,6 +16,7 @@ html{scroll-behavior: smooth;}
 .overlay-bar.nav-sticky .menu li a{color:#ffffff;}
 .feature-icon-large i{margin:0 auto;}
 /*.video-code {top:-350px;}*/
+.hero-divider{padding:100px 0;}
 .hero-divider:before{opacity:0.8;background:#000000;}
 .lead-video{font-size:1.6em !important;line-height:1.8 !important;}
 .bold{font-weight:700;}
