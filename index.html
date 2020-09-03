@@ -13,7 +13,6 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
       
-      <link href="css/flexslider.min.css" rel="stylesheet" type="text/css" media="all"/>
       <link href="css/line-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
       <link href="css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
       <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
@@ -411,14 +410,13 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.plugin.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.flexslider-min.js"></script>
 		<script src="js/spectragram.min.js"></script>
 		<script src="js/isotope.min.js"></script>
 		<script src="js/twitterFetcher_v10_min.js"></script>
 		<script src="js/lightbox.min.js"></script>
 		<script src="js/jquery.countdown.min.js"></script>
 		<script src="js/scrollme.min.js"></script>
-		<script src="js/scripts.js?v=3"></script>
+		<script src="js/scripts.js?v=4"></script>
 		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<script src="js/lottie.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173030560-1"></script>
@@ -433,8 +431,7 @@
 
 			$(document).ready(function(){
 
-				// var url = "./lottie/hotel-bell.json";
-				$.ajax({url: "https://assets1.lottiefiles.com/packages/lf20_5ohCYt.json", success: function(lottieHotelBell){
+				$.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
 					var lottieHotelBell = lottie.loadAnimation({
 						container: document.querySelector('#lottie-hotel'),
 						renderer: 'svg',
@@ -460,10 +457,10 @@
 				}});
 
 				setupDynamicSegment('custom-access-codes');
-				setupDynamicSegment('smart-info-board', null, function(){
+				setupDynamicSegment('smart-info-board', function(){
 					$('#section-smart-info-board-holder .image-slider').flexslider({ animation: "slide"});
-				});
-				setupDynamicSegment('automation-top-bottom', null, function(){
+				}, ['js/jquery.flexslider-min.js'], ['css/flexslider.min.css']);
+				setupDynamicSegment('automation-top-bottom', function(){
 					const videoad = document.querySelector('.videoad');
 					videoad.addEventListener('click', function(){
 						if(videoad.paused){
@@ -473,7 +470,7 @@
 						}
 					});
 				});
-				setupDynamicSegment('get-notified', ['https://www.google.com/recaptcha/api.js']);
+				setupDynamicSegment('get-notified', null, ['https://www.google.com/recaptcha/api.js']);
 
 			});
 		</script>

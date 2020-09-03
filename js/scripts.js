@@ -138,9 +138,9 @@ $(document).ready(function(){
 
 	// Slider Initializations
 	
-	$('.hero-slider').flexslider({});
-	$('.image-slider').flexslider({ animation: "slide"});
-	$('.testimonials-slider').flexslider({ directionNav: false });
+	// $('.hero-slider').flexslider({});
+	// $('.image-slider').flexslider({ animation: "slide"});
+	// $('.testimonials-slider').flexslider({ directionNav: false });
 	
 	// Slide Sizes
 	
@@ -394,9 +394,9 @@ $(window).load(function(){
 		
 	}
 	
-    if($('#tweets').length){
-    	$('#tweets').flexslider({ directionNav: false, controlNav: false });
-    }
+    // if($('#tweets').length){
+    // 	$('#tweets').flexslider({ directionNav: false, controlNav: false });
+    // }
     
     // Remove Loader
     
@@ -541,7 +541,7 @@ function isVisibleOrHasPassed($el) {
   return (elBottom <= winBottom);
 }
 
-function setupDynamicSegment(name, javascripts=null, callback=null){
+function setupDynamicSegment(name, callback=null, javascripts=null, csss=null){
 	var isLoaded = false;
 	var action = function (event) {
 		if(isVisibleOrHasPassed($('#section-' +name+ '-trigger'))){
@@ -549,13 +549,25 @@ function setupDynamicSegment(name, javascripts=null, callback=null){
 				isLoaded = true;
 				document.removeEventListener('scroll', action);
 				$('#section-'+name+'-holder').load('segments/' +name+ '.html', function(){
-					if(javascripts){
-						for(var i =0; i < javascripts.length; i++){
-							var javascript = javascripts[i];
-							$.getScript(javascript);
+					if(csss){
+						for(var i =0; i < csss.length; i++){
+							var css = csss[i];
+							$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', css) );
 						}
 					}
-					if(callback){
+					if(javascripts){
+						var jsToLoadCount = javascripts.length;
+						for(var i =0; i < javascripts.length; i++){
+							var javascript = javascripts[i];
+							$.getScript(javascript, function(){
+								jsToLoadCount--;
+								if(jsToLoadCount == 0 && callback){
+									callback();
+								}
+							});
+						}
+					}
+					else if(callback){
 						callback();
 					}
 					scrollme.init();
