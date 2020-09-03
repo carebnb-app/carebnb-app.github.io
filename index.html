@@ -276,7 +276,6 @@
 		<script src="js/scrollme.min.js"></script>
 		<script src="js/scripts.js?v=5"></script>
 		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-		<script src="js/lottie.min.js"></script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173030560-1"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -289,30 +288,33 @@
 
 			$(document).ready(function(){
 
-				$.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
-					var lottieHotelBell = lottie.loadAnimation({
-						container: document.querySelector('#lottie-hotel'),
-						renderer: 'svg',
-						loop: true,
-						autoplay: false,
-						animationData: lottieHotelBell, 
-						rendererSettings: {
-							clearCanvas: false,
-							progressiveLoad: false
-						}
-					});
-
-					var isPlaying = false;
-					document.addEventListener('scroll', function (event) {
-						if(isVisible($('#lottie-hotel'), 250)){
-							if(!isPlaying){
-								isPlaying = true;
-								lottieHotelBell.play();
+				// Lazy load and start lottie
+				$.getScript('js/lottie.min.js', function(){
+					$.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
+						var lottieHotelBell = lottie.loadAnimation({
+							container: document.querySelector('#lottie-hotel'),
+							renderer: 'svg',
+							loop: true,
+							autoplay: false,
+							animationData: lottieHotelBell, 
+							rendererSettings: {
+								clearCanvas: false,
+								progressiveLoad: false
 							}
-						}
-					});
+						});
 
-				}});
+						var isPlaying = false;
+						document.addEventListener('scroll', function (event) {
+							if(isVisible($('#lottie-hotel'), 250)){
+								if(!isPlaying){
+									isPlaying = true;
+									lottieHotelBell.play();
+								}
+							}
+						});
+
+					}});
+				});
 
 				setupDynamicSegment('custom-access-codes');
 
