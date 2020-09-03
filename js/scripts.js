@@ -531,3 +531,37 @@ function isVisible($el, offset=0) {
 	var elBottom = elTop + $el.height();
   return ((elBottom - offset <= winBottom) && (elTop + offset >= winTop));
 }
+
+// @see https://infoheap.com/jquery-check-if-element-is-visible-in-viewport/
+function isVisibleOrHasPassed($el) {
+  var winTop = $(window).scrollTop();
+  var winBottom = winTop + $(window).height();
+  var elTop = $el.offset().top;
+	var elBottom = elTop + $el.height();
+  return (elBottom <= winBottom);
+}
+
+function setupDynamicSegment(name, javascripts=null, callback=null){
+	var isLoaded = false;
+	var action = function (event) {
+		if(isVisibleOrHasPassed($('#section-' +name+ '-trigger'))){
+			if(!isLoaded){
+				isLoaded = true;
+				document.removeEventListener('scroll', action);
+				$('#section-'+name+'-holder').load('segments/' +name+ '.html', function(){
+					if(javascripts){
+						for(var i =0; i < javascripts.length; i++){
+							var javascript = javascripts[i];
+							$.getScript(javascript);
+						}
+					}
+					if(callback){
+						callback();
+					}
+					scrollme.init();
+				});
+			}
+		}
+	}
+	document.addEventListener('scroll', action);
+}
