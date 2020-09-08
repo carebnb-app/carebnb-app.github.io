@@ -1,7 +1,6 @@
 *{font-family: 'Oxygen', sans-serif;}
 html{scroll-behavior: smooth;}
 
-section {padding-top: 50px;padding-bottom: 50px;}
 .hero-slider .slides li{height:530px !important;}
 .overlay:before{background:#EB5757;}
 .bg-primary{background-color:#EB5757 !important;}
