@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/xsl" href="./main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://carebnb.app/</loc>
 		<lastmod>2020-09-10T09:00:00+00:00</lastmod>
+		<image:image>
+			<image:loc>https://www.syncbnb.com/wp-content/uploads/2019/04/airbnb-calendar-before-and-after-booking-com-ical-problem.png</image:loc>
+		</image:image>
 	</url>
-  <url>
-		<loc>https://carebnb.app/services/automatic-check-in-check-out</loc>
+	<url>
+		<loc>https://carebnb.app/services/automatic-check-in-check-out/</loc>
 		<lastmod>2020-09-10T09:00:00+00:00</lastmod>
+		<image:image>
+			<image:loc>https://carebnb.app/services/automatic-check-in-check-out/images/screenshots-with-frames/checkincheckout.png</image:loc>
+		</image:image>
 	</url>
-  <url>
-		<loc>https://carebnb.app/services/custom-access-codes</loc>
+	<url>
+		<loc>https://carebnb.app/services/custom-access-codes/</loc>
 		<lastmod>2020-09-10T09:00:00+00:00</lastmod>
+		<image:image>
+			<image:loc>https://carebnb.app/services/custom-access-codes/images/reagle-smart-lock.jpg</image:loc>
+		</image:image>
 	</url>
 </urlset>
