@@ -152,6 +152,8 @@ body{
 			img{
 				border-radius: $radius-secondary;
 				margin-right:10px;
+				width: 680px;
+				height: 453px;
 			}	
 		}
 
@@ -287,14 +289,15 @@ body{
 			::-webkit-scrollbar{background: transparent;}
 
 			.pictures{
-				// display:flex;
+				display:flex;
 				overflow-y: scroll;
-				// padding-top: $spacing-large;
+				// width: 350px;
 
 				img{
 					width: 350px;
 					margin-right:5px;
-					height:auto;
+					width: 350px;
+					height: 233px;
 				}	
 			}
 
@@ -312,6 +315,7 @@ body{
 			p{
 				font-size:30px;
 				padding-bottom:300px;
+				width:100%;
 
 				span{
 					text-decoration: line-through;

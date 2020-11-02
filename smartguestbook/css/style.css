@@ -96,6 +96,8 @@ body .gallery .pictures {
 body .gallery .pictures img {
   border-radius: 20px;
   margin-right: 10px;
+  width: 680px;
+  height: 453px;
 }
 body .pricing {
   display: flex;
@@ -218,12 +220,14 @@ body footer {
     background: transparent;
   }
   body .gallery .pictures {
+    display: flex;
     overflow-y: scroll;
   }
   body .gallery .pictures img {
     width: 350px;
     margin-right: 5px;
-    height: auto;
+    width: 350px;
+    height: 233px;
   }
   body .pricing {
     display: flex;
@@ -237,6 +241,7 @@ body footer {
   body .pricing p {
     font-size: 30px;
     padding-bottom: 300px;
+    width: 100%;
   }
   body .pricing p span {
     text-decoration: line-through;
