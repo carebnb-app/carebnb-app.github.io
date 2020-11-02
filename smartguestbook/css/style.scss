@@ -1,0 +1,316 @@
+// CAREBNB TRADEMARK 2020 
+
+$primary-color: rgb(235, 87, 87);
+$secondary-color: rgb(11, 19, 42);
+
+$radius-primary: 50px;
+$radius-secondary: 20px;
+
+$spacing-regular: 20px;
+$spacing-large: 50px;
+
+$font-stack: 'Oxygen', sans-serif;
+$font-size: 1em;
+$font-light: 300;
+$font-bold: 700;
+$font-color-primary: rgb(11, 19, 42);
+$font-color-secondary: rgb(79, 86, 101);
+
+
+@mixin cta() {
+	border: 1px solid $primary-color;
+	border-radius: $radius-primary;
+	padding:1em 3em;
+	color:$primary-color;
+	font-weight: $font-bold;
+
+	&:hover{
+		background: $primary-color;
+		color: white;
+		transition:1s;
+	}
+
+}
+
+body{
+	
+	font-family: $font-stack;
+	color: $font-color-primary;
+	// line-height: $font-size*3;
+
+	h1{
+		font-weight: $font-bold;
+	}
+
+	h2{
+		font-size: $font-size*3;
+		font-weight: $font-light;
+	}
+
+	a{
+		text-decoration:none;
+		color: $font-color-primary;
+	}
+
+	ul,ol{
+		list-style:none;
+	}
+
+	section{
+		padding-top: $spacing-large*2;
+	}
+
+	.hero{
+		display:flex;
+		justify-content:center;
+		align-items:flex-end;
+		padding-top:120px;
+	}
+
+	header{
+
+		text-align:center;
+
+		h1{
+			font-size: ($font-size)*4;
+			font-weight: $font-light;
+			padding-bottom: $spacing-regular;
+		}
+
+		h3{
+			font-size: ($font-size)*1.7;
+		}
+	}
+
+	h3{
+			color: $font-color-secondary;
+			font-weight: $font-light;
+			font-size: ($font-size)*1.4;
+		}
+
+	.container{
+		max-width: 1140px;
+		margin:0 auto;
+	}
+
+	nav{
+		padding-top:10px;
+		display:flex;
+		flex-direction:row;
+		justify-content:space-between;
+		align-items:center;
+	}
+
+	.menu{
+		padding:0;
+		position:fixed;
+		z-index:2;
+		background:white;
+		width:100%;
+		height:90px;
+	}
+
+	.description{
+
+		display:flex;
+		flex-direction:row;
+		justify-content:space-between;
+
+		img{
+			border-radius: $radius-secondary;
+		}
+
+		ul{
+			padding-inline-start:0;
+			font-size: $font-size*1.5;
+			color: $font-color-secondary;
+			padding-top:20px;
+
+			li{
+				background:url('../img/icon-list.svg') no-repeat 0 8px;
+				padding-left:50px;
+				padding-bottom:22px;
+			}
+		}
+
+	}
+
+	.gallery{
+		display:flex;
+		flex-direction:column;
+		text-align:center;
+		overflow:hidden;
+		::-webkit-scrollbar{background: transparent;}
+
+		.pictures{
+			display:flex;
+			overflow-y: scroll;
+			padding-top: $spacing-large;
+
+			img{
+				border-radius: $radius-secondary;
+				margin-right:10px;
+			}	
+		}
+
+	}
+
+	.pricing{
+		display:flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: $radius-secondary;
+		background: white;
+		margin-top: $spacing-large*2;
+		box-shadow: 0 -50px 100px rgb(0,0,0, 0.1);	
+		height:60px;
+		padding:90px 60px;
+
+		p{
+			font-size:35px;
+			width: 350px;
+
+			span{
+				text-decoration: line-through;
+			}
+		}
+
+		img{
+			position: absolute;
+			left:50%;
+			margin-left:-127px;
+		}
+	}
+
+	footer{
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		padding: $spacing-large*3 0 $spacing-large 0;
+	}
+
+} // end body
+
+
+.cta{
+	@include cta();
+}
+
+.cta-secondary{
+	@include cta();
+	background: $primary-color;
+	border-radius: $radius-secondary;
+	color: white;
+	display:block;
+	width:250px;
+	margin:0 auto;
+	margin-top: $spacing-regular*2.5;
+
+	&:hover{
+		transition-timing-function: ease;
+		color: $primary-color;
+		background: white;
+	}
+}
+
+
+
+@media only screen and (max-width: 736px){
+
+	body{
+
+		.container{
+		padding:0 20px;
+		}
+
+		header h1{
+			font-size: $font-size*2;
+		}
+		header h3{
+			font-size: $font-size;
+		}
+
+		h2{
+			font-size: $font-size*2;
+			text-align: center;
+		}
+
+		h3{
+			font-size: $font-size;
+		}
+
+		.description{
+			flex-direction: column;
+
+			img{
+				display:none;
+			}
+
+			ul{
+
+				li{
+					font-size:0.8em;
+					background:url('../img/icon-list.svg') no-repeat 0 0;
+				}
+
+			}
+
+		}
+
+		.gallery{
+			display:flex;
+			flex-direction:column;
+			text-align:center;
+			overflow:hidden;
+			::-webkit-scrollbar{background: transparent;}
+
+			.pictures{
+				display:flex;
+				overflow-y: scroll;
+				padding-top: $spacing-large;
+
+				img{
+					width: 350px;
+					margin-right:5px;
+				}	
+			}
+
+		}
+
+		.pricing{
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: $spacing-large;
+		box-shadow: 0 -50px 100px rgb(0,0,0, 0.1);	
+		height:auto;
+		position:relative;
+
+			p{
+				font-size:35px;
+				width: 350px;
+				padding-bottom:300px;
+
+				span{
+					text-decoration: line-through;
+				}
+			}
+
+
+			img{
+				position: absolute;
+				left:50%;
+				margin-left:-127px;
+				top:200px;
+			}
+		}
+
+		footer{
+			padding: $spacing-large 0 $spacing-large 0;
+		}
+
+	}
+
+}
