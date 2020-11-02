@@ -227,6 +227,7 @@ body{
 
 		header h1{
 			font-size: $font-size*2;
+			padding-top: $spacing-large/2;
 		}
 		header h3{
 			font-size: $font-size;
@@ -239,6 +240,17 @@ body{
 
 		h3{
 			font-size: $font-size;
+		}
+
+		nav{
+			height:auto;
+			justify-content: center;
+			align-items: center;
+			padding-top:20px;
+		}
+
+		nav .cta{
+			display:none;
 		}
 
 		.description{
@@ -274,6 +286,7 @@ body{
 				img{
 					width: 350px;
 					margin-right:5px;
+					height:auto;
 				}	
 			}
 
@@ -290,7 +303,7 @@ body{
 
 			p{
 				font-size:35px;
-				width: 350px;
+				width: 80%;
 				padding-bottom:300px;
 
 				span{
@@ -303,7 +316,7 @@ body{
 				position: absolute;
 				left:50%;
 				margin-left:-127px;
-				top:200px;
+				top:240px;
 			}
 		}
 
