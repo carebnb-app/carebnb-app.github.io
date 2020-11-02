@@ -187,12 +187,16 @@ body footer {
   }
   body nav {
     height: auto;
-    justify-content: center;
     align-items: center;
-    padding-top: 20px;
+    padding: 10px 0;
   }
   body nav .cta {
-    display: none;
+    padding: 5px 30px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  body .menu {
+    height: auto;
   }
   body .description {
     flex-direction: column;
