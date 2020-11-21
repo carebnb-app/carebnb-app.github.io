@@ -79,6 +79,10 @@ body .description {
 body .description img {
   border-radius: 20px;
 }
+body .description h3 {
+  font-size: 2.5em;
+  text-align: center;
+}
 body .description ul {
   padding-inline-start: 0;
   font-size: 1.5em;
@@ -224,6 +228,9 @@ body footer a {
   }
   body .description {
     flex-direction: column;
+  }
+  body .description h3 {
+    font-size: 1.7em;
   }
   body .description ul li {
     font-size: 0.8em;

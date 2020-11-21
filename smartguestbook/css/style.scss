@@ -146,6 +146,11 @@ body{
 
 			}
 
+		h3{
+			font-size:2.5em;
+			text-align:center;
+		}
+
 		ul{
 			padding-inline-start:0;
 			font-size: $font-size*1.5;
@@ -306,6 +311,10 @@ body{
 
 		.description{
 			flex-direction: column;
+
+			h3{
+				font-size:1.7em;
+			}
 
 			ul{
 
