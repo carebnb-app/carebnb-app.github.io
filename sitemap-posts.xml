@@ -29,4 +29,11 @@
 			<image:loc>https://carebnb.app/blog/avoid-airbnb-listing-blockage-on-halloween-weekend/images/avoid-airbnb-listing-blockage-on-halloween-weekend.jpg</image:loc>
 		</image:image>
 	</url>
+	<url>
+		<loc>https://carebnb.app/blog/creative-hosting/</loc>
+		<lastmod>2020-11-10T09:00:00+00:00</lastmod>
+		<image:image>
+			<image:loc>https://carebnb.app/blog/creative-hosting/images/creative-hosting.jpg</image:loc>
+		</image:image>
+	</url>
 </urlset>
