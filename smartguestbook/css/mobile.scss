@@ -1,0 +1,142 @@
+@import "_variables";
+
+@media only screen and (max-width: 1125px){
+
+	body{
+
+		.container{
+		padding:0 20px;
+		}
+
+		header{
+			height: 80vh;
+			padding-bottom: 0;
+			padding-top: 0;
+
+			div	{
+				padding:15vh 10px;
+			}
+
+		}
+
+		header h1{
+			font-size: $font-size*2.5;
+		}
+		header h3{
+			font-size: $font-size*1.5;
+		}
+
+		h2{
+			font-size: $font-size*2;
+			text-align: center;
+		}
+
+		h3{
+			font-size: $font-size;
+		}
+
+		nav{
+			height:auto;
+			// justify-content: center;
+			align-items: center;
+			padding:10px 0;
+		}
+
+		nav .cta{
+			padding:5px 30px;
+			font-weight: $font-light;
+			font-size: 14px;
+		}
+
+		.menu{
+			height: auto;
+		}
+
+		.description{
+            flex-direction: column;
+            
+            h2{
+                font-size:1.8em;
+            }
+
+			h3{
+				font-size:1.7em;
+            }
+            
+            p{
+                font-size:1.1em;
+            }
+
+			ul{
+
+				li{
+					font-size:0.8em;
+					background:url('../img/icon-list.svg') no-repeat 0 0;
+				}
+
+			}
+
+		}
+
+		.gallery{
+			display:flex;
+			flex-direction:column;
+        }
+        
+        .pictures{
+            flex-direction:column;
+            padding-top: $spacing-large;
+
+            img{
+                width: 100%;
+
+                &:not( :hover ){
+                    transition: none;
+                    border-radius:0;
+                    border: none;
+                }
+    
+                &:hover{
+                    transform: none;
+                    transition: none;
+                    border-radius:0;
+                    border: none;
+                }
+            }
+        }
+
+		.pricing{
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: $spacing-large;
+		box-shadow: 0 -50px 100px rgb(0,0,0, 0.1);	
+		height:auto;
+		position:relative;
+
+			p{
+				font-size:30px;
+				padding-bottom:300px;
+				width:100%;
+
+				span{
+					text-decoration: line-through;
+				}
+			}
+
+
+			img{
+				position: absolute;
+				left:50%;
+				margin-left:-127px;
+				top:240px;
+			}
+		}
+
+		footer{
+			padding: $spacing-large 0 $spacing-large 0;
+		}
+
+	}
+
+}

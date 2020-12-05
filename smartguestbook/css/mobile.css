@@ -1,0 +1,105 @@
+@media only screen and (max-width: 1125px) {
+  body .container {
+    padding: 0 20px;
+  }
+  body header {
+    height: 80vh;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  body header div {
+    padding: 15vh 10px;
+  }
+  body header h1 {
+    font-size: 2.5em;
+  }
+  body header h3 {
+    font-size: 1.5em;
+  }
+  body h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+  body h3 {
+    font-size: 1em;
+  }
+  body nav {
+    height: auto;
+    align-items: center;
+    padding: 10px 0;
+  }
+  body nav .cta {
+    padding: 5px 30px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+  body .menu {
+    height: auto;
+  }
+  body .description {
+    flex-direction: column;
+  }
+  body .description h2 {
+    font-size: 1.8em;
+  }
+  body .description h3 {
+    font-size: 1.7em;
+  }
+  body .description p {
+    font-size: 1.1em;
+  }
+  body .description ul li {
+    font-size: 0.8em;
+    background: url("../img/icon-list.svg") no-repeat 0 0;
+  }
+  body .gallery {
+    display: flex;
+    flex-direction: column;
+  }
+  body .pictures {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+  body .pictures img {
+    width: 100%;
+  }
+  body .pictures img:not(:hover) {
+    transition: none;
+    border-radius: 0;
+    border: none;
+  }
+  body .pictures img:hover {
+    transform: none;
+    transition: none;
+    border-radius: 0;
+    border: none;
+  }
+  body .pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: 0 -50px 100px rgba(0, 0, 0, 0.1);
+    height: auto;
+    position: relative;
+  }
+  body .pricing p {
+    font-size: 30px;
+    padding-bottom: 300px;
+    width: 100%;
+  }
+  body .pricing p span {
+    text-decoration: line-through;
+  }
+  body .pricing img {
+    position: absolute;
+    left: 50%;
+    margin-left: -127px;
+    top: 240px;
+  }
+  body footer {
+    padding: 50px 0 50px 0;
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */
