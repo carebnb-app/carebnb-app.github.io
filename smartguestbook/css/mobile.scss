@@ -12,6 +12,7 @@
 			height: 80vh;
 			padding-bottom: 0;
 			padding-top: 0;
+			background-position-x: calc(100% + 90px);
 
 			div	{
 				padding:15vh 10px;
@@ -94,6 +95,7 @@
                     transition: none;
                     border-radius:0;
                     border: none;
+										border-bottom: 2px solid #fff;
                 }
     
                 &:hover{
@@ -101,6 +103,7 @@
                     transition: none;
                     border-radius:0;
                     border: none;
+										border-bottom: 2px solid #fff;
                 }
             }
         }
