@@ -12,7 +12,7 @@ body h2 {
   text-align: center;
 }
 body .main-title {
-  padding-bottom: 80px;
+  padding: 0px 30px;
   font-weight: 700;
   color: #4f5665;
 }
@@ -30,13 +30,13 @@ body strong {
   color: #eb5757;
 }
 body header {
-  background:url('../img/smartguestbook-hero.jpg');
+  background: url("../img/smartguestbook-hero.jpg");
   background-size: cover;
   background-position: center right;
   text-align: center;
   margin-bottom: 80px;
   height: 100vh;
-  box-shadow:inset 0 0 0 2000px rgba(40, 30, 30, 0.6);
+  box-shadow: inset 0 0 0 2000px rgba(40, 30, 30, 0.6);
 }
 body header div {
   padding: 40vh 0;
@@ -101,6 +101,7 @@ body .description {
 }
 body .description div {
   align-self: center;
+  padding-bottom: 100px;
 }
 body .description p {
   color: #4f5665;

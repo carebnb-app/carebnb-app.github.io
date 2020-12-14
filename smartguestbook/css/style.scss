@@ -34,7 +34,7 @@ body{
 	}
 
 	.main-title{
-		padding-bottom: 80px;
+		padding: 0px 30px;
 		font-weight: $font-bold;
 		color: $font-color-secondary;
 	}
@@ -150,6 +150,7 @@ body{
 
 		div{
 			align-self: center;
+			padding-bottom: 100px;
 			// max-width:1200px;
 		}
 
