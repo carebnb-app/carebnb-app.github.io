@@ -23,7 +23,7 @@ html{scroll-behavior: smooth;}
 /*.bg-secondary-1{background:#282828 !important;}*/
 .strip h3{top:6px;}
 .strip .signup-email-field{top:0;}
-.videoad{cursor:pointer;}
+.videoad{cursor:pointer; width: 100%;}
 footer.details{background:none;color:#ffffff;}
 footer.details .logo {max-width:160px;margin-bottom: 30px;margin-top: 0px;}
 footer{padding-top: 0px; padding-bottom: 0px;}
@@ -65,5 +65,4 @@ footer{padding-top: 0px; padding-bottom: 0px;}
 .steps .arrow-left,.steps .arrow-left-nothing{display:none;}
 .steps .arrow-down{display:block;padding-top:40px;}
 .steps .icon{font-size:3em;padding-bottom:10px;padding-top:50px;}
-.videoad{width:100%;}
 }
