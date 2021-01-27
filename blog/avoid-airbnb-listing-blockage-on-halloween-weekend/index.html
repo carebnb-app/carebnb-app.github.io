@@ -190,9 +190,23 @@
 								</p>
 				
 								<center>
-									<video class="videoad" preload="yes" poster="../../images/play-video.png">
-										<source type="video/mp4" src="../../videos/carebnb.mp4">
-									</video>
+									<video id="videoad" class="videoad" poster="" apreload="yes"></video>
+									<script>
+										var videoad = document.getElementById('videoad')
+										if (window.innerWidth < 270) {
+											videoad.setAttribute("poster", "../../videos/main/prev270p.png");
+											videoad.innerHTML = "<source type='video/mp4' src=\"../../videos/main/270p.mp4\" />";
+										} else if (window.innerWidth < 360) {
+											videoad.setAttribute("poster", "videos/main/prev360p.png");
+											videoad.innerHTML = "<source type='video/mp4' src=\"../../videos/main/360p.mp4\" />";
+										} else if (window.innerWidth < 540) {
+											videoad.setAttribute("poster", "videos/main/prev540p.png");
+											videoad.innerHTML = "<source type='video/mp4' src=\"../../videos/main/540p.mp4\" />";
+										} else {
+											videoad.setAttribute("poster", "videos/main/prev1080p.png");
+											videoad.innerHTML = "<source type='video/mp4' src=\"../../videos/main/1080p.mp4\" />";
+										}
+									</script>
 								</center>
 								<div class="text-center">
 									<br /><a href="#section-get-notified" class="btn btn-primary">Try carebnb for free</a>

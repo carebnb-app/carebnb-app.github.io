@@ -432,10 +432,26 @@
 		    <div class="modal-content">
 		      <div class="modal-body">
 		        <div class="video-wrapper">
-					<video class="videoad" preload="none" controls>
-						<source type="video/mp4" src="videos/carebnb.mp4">
-					</video>
-				</div>
+
+							<video id="videoad" class="videoad" poster="" apreload="yes"></video>
+							<script>
+								var videoad = document.getElementById('videoad')
+								if (window.innerWidth < 270) {
+									videoad.setAttribute("poster", "videos/main/prev270p.png");
+									videoad.innerHTML = "<source type='video/mp4' src=\"./videos/main/270p.mp4\" />";
+								} else if (window.innerWidth < 360) {
+									videoad.setAttribute("poster", "videos/main/prev360p.png");
+									videoad.innerHTML = "<source type='video/mp4' src=\"./videos/main/360p.mp4\" />";
+								} else if (window.innerWidth < 540) {
+									videoad.setAttribute("poster", "videos/main/prev540p.png");
+									videoad.innerHTML = "<source type='video/mp4' src=\"./videos/main/540p.mp4\" />";
+								} else {
+									videoad.setAttribute("poster", "videos/main/prev1080p.png");
+									videoad.innerHTML = "<source type='video/mp4' src=\"./videos/main/1080p.mp4\" />";
+								}
+							</script>
+
+					</div>
 		    </div>
 		  </div>
 		</div>
