@@ -806,6 +806,12 @@
 					}
 
 
+					else if(nextSection.id == 'section-main-capabilities'){
+						// bugfix - transitions won't work in the section right after the flexslider 
+						nextSection.appendChild(document.createTextNode(' '));
+					}
+
+
 					else if(nextSection.id == 'section-automation-top-bottom'){
 						setupLazySection($(nextSection), $(currSection), function(){
 							const videoad = document.querySelector('.videoad');
