@@ -842,6 +842,11 @@
 							videoad.addEventListener('click', function(){
 								if(videoad.paused){
 									videoad.play();
+									analytics.logEvent('select_content', {
+										content_type: 'video',
+										content_id: 'main-video',
+										items: [{ name: 'index' },{ name: 'no-cut' },{ name: 'main' }]
+									});
 								} else{
 									videoad.pause();
 								}

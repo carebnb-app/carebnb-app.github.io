@@ -495,21 +495,20 @@
         <script src="js/jquery.countdown.min.js"></script>
         <script src="js/scripts.js"></script>
 
-        <script type="text/javascript">
-			// const modalvideo = document.getElementById('video-overview');
-			// console.log(modalvideo);
-			// const videoad = document.querySelector('.videoad');
-			// const playvideo = document.querySelector('.playvideo');
-
-			// playvideo.addEventListener('click', function(){
-			// 	videoad.play();
-			// });
-
-			// $(document).ready(function(){
-			// 	$(modalvideo).on('hide.bs.modal',function(){
-			// 		videoad.pause();
-			// 	});
-			// });
+				<script type="text/javascript">
+					const videoad = document.querySelector('.videoad');
+					videoad.addEventListener('click', function(){
+						if(videoad.paused){
+							videoad.play();
+							analytics.logEvent('select_content', {
+								content_type: 'video',
+								content_id: 'main-video',
+								items: [{ name: 'services-integrations'},{ name: 'no-cut' },{ name: 'main' }]
+							});
+						} else{
+							videoad.pause();
+						}
+					});
 			
 		</script>
     </body>
