@@ -478,7 +478,7 @@ function dynamicallyLoadJS(javascripts, finishAction){
 }
 
 
-
+var lazyCount = 0;
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
@@ -495,11 +495,9 @@ function includeHTML() {
 		}
     if (file) {
 			if(isLazy){
-				performRequest(elmnt, file, isLazy);
+				lazyCount++;
 			}
-			else {
-				performRequest(elmnt, file, isLazy);
-			}
+			performRequest(elmnt, file, isLazy);
 			return;
 		}
 	}
@@ -517,9 +515,6 @@ function includeHTML() {
 				var jsEndTagPos = jsContent.indexOf("</script>");
 				jsContent = jsContent.substring(0, jsEndTagPos);
 				if(isLazy){
-					if(typeof scrollme !== 'undefined'){
-						scrollme.init($(elmnt));
-					}
 					const prevElement = z[i-1];
 					var onScrollListener = () => {
 						if(isVisibleOrHasPassed($(prevElement)) && !isLazyLoaded){
@@ -529,6 +524,7 @@ function includeHTML() {
 						}
 					}
 					document.addEventListener('scroll', onScrollListener);
+					setTimeout(onScrollListener, 1000 * lazyCount);
 				} else {
 					eval(jsContent)
 				}

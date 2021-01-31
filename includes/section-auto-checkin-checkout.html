@@ -1,0 +1,99 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="text-center">
+      <h1>Automatic check in check out</h1>
+      <p class="lead">
+        Fully automated check in check out.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div
+        class="scrollme animateme col-sm-4"
+        data-when="enter" 
+        data-from="0.75" 
+        data-to="0" 
+        data-opacity="0" >
+      <div id="lottie-hotel"></div>
+    </div>
+  
+    <div class="col-sm-8 align-vertical no-align-mobile clearfix">
+    
+      <div 
+          class="scrollme animateme col-md-6 no-pad-left clearfix"
+          data-when="enter" 
+          data-from="0.75" 
+          data-to="0" 
+          data-opacity="0" 
+          data-translatex="200" >
+        <div class="feature feature-icon-small">
+          <i class="icon icon-chat"></i>
+          <h6>Messaging</h6>
+          <p>
+            Our prorietary algorithm detects common guest requests and automatically deals with them.
+            Be always efficient and polite at dealing with guests.
+          </p>
+        </div>
+      </div>
+    
+      <div 
+          class="scrollme animateme col-md-6 no-pad-left clearfix"
+          data-when="enter" 
+          data-from="0.75" 
+          data-to="0" 
+          data-opacity="0" 
+          data-translatex="300" >
+        <div class="feature feature-icon-small">
+          <i class="icon icon-mobile"></i>
+          <h6>Customize it</h6>
+          <p>
+            Trash day; Near by activities; Discounts; etc... We got you covered.
+            <br />With your own touch, we talk and explain rules and procedures to your guests.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div
+    class="scrollme animateme text-center"
+    data-when="enter" 
+    data-from="0.75" 
+    data-to="0" 
+    data-opacity="0" >
+  <br />
+  <a href="#section-get-notified" class="btn btn-primary">Try carebnb for free</a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="./services/automatic-check-in-check-out/" class="btn btn-primary btn-filled">Know more</a>
+</div>
+
+<script>
+scrollme.init($('#section-auto-checkin-checkout'));
+$.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
+  var lottieHotelBell = lottie.loadAnimation({
+    container: document.querySelector('#lottie-hotel'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    animationData: lottieHotelBell, 
+    rendererSettings: {
+      clearCanvas: false,
+      progressiveLoad: false
+    }
+  });
+  var isPlaying = false;
+  document.addEventListener('scroll', function (event) {
+    if(isVisible($('#lottie-hotel'), 250)){
+      if(!isPlaying){
+        isPlaying = true;
+        lottieHotelBell.play();
+      }
+    }
+  });
+}});
+</script>

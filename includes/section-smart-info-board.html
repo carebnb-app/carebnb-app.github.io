@@ -1,55 +1,54 @@
-<section id="section-smart-info-board">
-  <div class="image-slider-section container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-        <h1
-            class="scrollme animateme"
-            data-when="enter" 
-            data-from="0.5" 
-            data-to="0" 
-            data-crop="false" 
-            data-opacity="0"
-            data-scale="1.5">
-          Smart Info Board</h1>
-        <p class="lead">
-          Personalized electronic board.
-          <b>Impress your guests</b> by displaying util and personalized messages,
-          all automatic through Carebnb platform.
-        </p>
-        <div class="image-slider image-gallery" id="section-smart-info-board-image-slider">
-          <ul class="slides">
-            <li>
-              <picture>
-                <source srcset="/images/guest-info-frame/hallway3.webp" type="image/webp">
-                <source srcset="/images/guest-info-frame/hallway3.jpg" type="image/jpeg"> 
-                <img src="/images/guest-info-frame/hallway3.jpg" alt="Hallway with Guest Info Board 3">
-              </picture>
-            </li>
-            <li>
-              <picture>
-                <source srcset="/images/guest-info-frame/hallway2.webp" type="image/webp">
-                <source srcset="/images/guest-info-frame/hallway2.jpg" type="image/jpeg"> 
-                <img src="/images/guest-info-frame/hallway2.jpg" alt="Hallway with Guest Info Board 2">
-              </picture>
-            </li>
-            <li>
-              <picture>
-                <source srcset="/images/guest-info-frame/hallway1.webp" type="image/webp">
-                <source srcset="/images/guest-info-frame/hallway1.jpg" type="image/jpeg"> 
-                <img src="/images/guest-info-frame/hallway1.jpg" alt="Hallway with Guest Info Board 1">
-              </picture>
-            </li>
-          </ul>
-        </div>
+<div class="image-slider-section container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+      <h1
+          class="scrollme animateme"
+          data-when="enter" 
+          data-from="0.5" 
+          data-to="0" 
+          data-crop="false" 
+          data-opacity="0"
+          data-scale="1.5">
+        Smart Info Board</h1>
+      <p class="lead">
+        Personalized electronic board.
+        <b>Impress your guests</b> by displaying util and personalized messages,
+        all automatic through Carebnb platform.
+      </p>
+      <div class="image-slider image-gallery" id="section-smart-info-board-image-slider">
+        <ul class="slides">
+          <li>
+            <picture>
+              <source srcset="/images/guest-info-frame/hallway3.webp" type="image/webp">
+              <source srcset="/images/guest-info-frame/hallway3.jpg" type="image/jpeg"> 
+              <img src="/images/guest-info-frame/hallway3.jpg" alt="Hallway with Guest Info Board 3">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source srcset="/images/guest-info-frame/hallway2.webp" type="image/webp">
+              <source srcset="/images/guest-info-frame/hallway2.jpg" type="image/jpeg"> 
+              <img src="/images/guest-info-frame/hallway2.jpg" alt="Hallway with Guest Info Board 2">
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source srcset="/images/guest-info-frame/hallway1.webp" type="image/webp">
+              <source srcset="/images/guest-info-frame/hallway1.jpg" type="image/jpeg"> 
+              <img src="/images/guest-info-frame/hallway1.jpg" alt="Hallway with Guest Info Board 1">
+            </picture>
+          </li>
+        </ul>
       </div>
-      
     </div>
+    
   </div>
-</section>
+</div>
 
 <link href="/css/flexslider.min.css" rel="stylesheet">
 
 <script>
+scrollme.init($('#section-smart-info-board'));
 dynamicallyLoadJS([
   "/js/jquery.flexslider-min.js"], () => {
     $('#section-smart-info-board .image-slider').flexslider({ animation: "slide"});

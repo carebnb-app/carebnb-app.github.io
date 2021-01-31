@@ -1,0 +1,98 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="text-center">
+      <h1>Smart chatbot agent</h1>
+      <p class="lead">
+        Automatically responds to guests questions
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div
+        class="scrollme animateme col-sm-4"
+        data-when="enter" 
+        data-from="0.75" 
+        data-to="0" 
+        data-opacity="0" >
+      <div id="lottie-chat"></div>
+    </div>
+  
+    <div class="col-sm-8 align-vertical no-align-mobile clearfix">
+    
+      <div 
+          class="scrollme animateme col-md-6 no-pad-left clearfix"
+          data-when="enter" 
+          data-from="0.75" 
+          data-to="0" 
+          data-opacity="0" 
+          data-translatex="200" >
+        <div class="feature feature-icon-small">
+          <i class="icon icon-gears"></i>
+          <h6>Machine learning</h6>
+          <p>
+            Our artificially intelligent chatbot answers common questions, as well as learns as it goes.
+          </p>
+        </div>
+      </div>
+    
+      <div 
+          class="scrollme animateme col-md-6 no-pad-left clearfix"
+          data-when="enter" 
+          data-from="0.75" 
+          data-to="0" 
+          data-opacity="0" 
+          data-translatex="300" >
+        <div class="feature feature-icon-small">
+          <i class="icon icon-speedometer"></i>
+          <h6>Efficiency at its finest</h6>
+          <p>
+            Don't let your guests wait, be always polite and communicate with efficiency.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div
+    class="scrollme animateme text-center"
+    data-when="enter" 
+    data-from="0.75" 
+    data-to="0" 
+    data-opacity="0" >
+  <br />
+  <a href="#section-get-notified" class="btn btn-primary">Try carebnb for free</a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="./services/smart-chatbot-agent/" class="btn btn-primary btn-filled">Know more</a>
+</div>
+
+<script>
+scrollme.init($('#section-smart-chatbot-agent'));
+
+$.ajax({url: "lottie/chat.json", success: function(lottieHotelBell){
+  var lottieHotelBell = lottie.loadAnimation({
+    container: document.querySelector('#lottie-chat'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    animationData: lottieHotelBell, 
+    rendererSettings: {
+      clearCanvas: false,
+      progressiveLoad: false
+    }
+  });
+  var isPlaying = false;
+  document.addEventListener('scroll', function (event) {
+    if(isVisible($('#lottie-chat'), 250)){
+      if(!isPlaying){
+        isPlaying = true;
+        lottieHotelBell.play();
+      }
+    }
+  });
+}});
+</script>
