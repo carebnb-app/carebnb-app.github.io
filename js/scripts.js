@@ -495,17 +495,7 @@ function includeHTML() {
 		}
     if (file) {
 			if(isLazy){
-				const prevElement = z[i-1];
-				var onScrollListener = () => {
-					if(isVisibleOrHasPassed($(prevElement)) && !isLazyLoaded){
-						isLazyLoaded = true;
-						performRequest(elmnt, file, isLazy);
-						document.removeEventListener('scroll', onScrollListener);
-					}
-				}
-				document.addEventListener('scroll', onScrollListener);
-				elmnt.removeAttribute("lazy-include-html");
-				includeHTML();
+				performRequest(elmnt, file, isLazy);
 			}
 			else {
 				performRequest(elmnt, file, isLazy);
@@ -526,15 +516,25 @@ function includeHTML() {
 				var jsContent = data.substring(jsStartTagPos);
 				var jsEndTagPos = jsContent.indexOf("</script>");
 				jsContent = jsContent.substring(0, jsEndTagPos);
-				eval(jsContent)
-				if(isLazy && typeof scrollme !== 'undefined'){
-					scrollme.init($(elmnt));
+				if(isLazy){
+					if(typeof scrollme !== 'undefined'){
+						scrollme.init($(elmnt));
+					}
+					const prevElement = z[i-1];
+					var onScrollListener = () => {
+						if(isVisibleOrHasPassed($(prevElement)) && !isLazyLoaded){
+							isLazyLoaded = true;
+							eval(jsContent)
+							document.removeEventListener('scroll', onScrollListener);
+						}
+					}
+					document.addEventListener('scroll', onScrollListener);
+				} else {
+					eval(jsContent)
 				}
 			}
-			if(!isLazy){
-				elmnt.removeAttribute("include-html");
-				includeHTML();
-			}
+			elmnt.removeAttribute((isLazy ? "lazy-" : "") + "include-html");
+			includeHTML();
 		});
 	}
 }
