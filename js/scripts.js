@@ -215,33 +215,43 @@ $(document).ready(function(){
 
 
 function startIsotope(){
+
+	dynamicallyLoadJS(["/js/isotope.min.js"], () => {
 	
-	// Isotope Projects
+		// Isotope Projects
+		
+		$('.projects-container').isotope({
+			itemSelector: '.project',
+			layoutMode: 'fitRows'
+		});
+		
+		$('.filters li').click(function() {
+			var current = $(this);
+			
+			current.siblings('li').removeClass('active');
+			current.addClass('active');
+			
+			var filterValue = current.attr('data-filter');
+			var container = current.closest('.projects-wrapper').find('.projects-container');
+			container.isotope({ filter: filterValue });
+		});
+		
+		// Isotope contained feature boxes
+		
+		$('.contained-features-wrapper').isotope({
+			itemSelector: '.no-pad',
+			layoutMode: 'masonry',
+			masonry: {
+				gutter: 0
+			}
+		});
 	
-	$('.projects-container').isotope({
-	  itemSelector: '.project',
-	  layoutMode: 'fitRows'
-	});
-	
-	$('.filters li').click(function() {
-	  var current = $(this);
-	  
-	  current.siblings('li').removeClass('active');
-	  current.addClass('active');
-	  
-	  var filterValue = current.attr('data-filter');
-	  var container = current.closest('.projects-wrapper').find('.projects-container');
-	  container.isotope({ filter: filterValue });
-	});
-	
-	// Isotope contained feature boxes
-	
-	$('.contained-features-wrapper').isotope({
-	  itemSelector: '.no-pad',
-	  layoutMode: 'masonry',
-	  masonry: {
-		  gutter: 0
-		}
+		// Blog Masonry
+		
+		$('.blog-masonry-container').isotope({
+			itemSelector: '.blog-masonry-item',
+			layoutMode: 'masonry'
+		});
 	});
 
 }
@@ -265,13 +275,6 @@ $(window).load(function(){
     
     $('.loader').css('opacity', 0);
     setTimeout(function(){$('.loader').hide();}, 600);
-	
-	// Blog Masonry
-	
-	$('.blog-masonry-container').isotope({
-	  itemSelector: '.blog-masonry-item',
-	  layoutMode: 'masonry'
-	});
 	
 	$('.blog-filters li').click(function() {
 	  var current = $(this);
@@ -506,5 +509,7 @@ function includeHTML() {
 
 
 function initPage(){
-	includeHTML();
+	$(window).on('load', function () {
+		includeHTML();
+	});
 }
