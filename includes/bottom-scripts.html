@@ -14,30 +14,30 @@ dynamicallyLoadJS([
       initScript()
     }
 
-    // // FIREBASE
-    // dynamicallyLoadJS([
-    //   "https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js",
-    //   "https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"], () => {
-    //     var firebaseConfig = {
-    //       apiKey: "AIzaSyAdaToiNFch9WkOJGRQ79DqSkpZ40vIE9Q",
-    //       authDomain: "carebnb-site.firebaseapp.com",
-    //       projectId: "carebnb-site",
-    //       storageBucket: "carebnb-site.appspot.com",
-    //       messagingSenderId: "193291360466",
-    //       appId: "1:193291360466:web:f1d82f269d309449fef50b",
-    //       measurementId: "G-XS4BBD2464"
-    //     };
-    //     firebase.initializeApp(firebaseConfig);
-    //     analytics = firebase.analytics();
-    //   });
+    // FIREBASE
+    dynamicallyLoadJS([
+      "https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js",
+      "https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"], () => {
+        var firebaseConfig = {
+          apiKey: "AIzaSyAdaToiNFch9WkOJGRQ79DqSkpZ40vIE9Q",
+          authDomain: "carebnb-site.firebaseapp.com",
+          projectId: "carebnb-site",
+          storageBucket: "carebnb-site.appspot.com",
+          messagingSenderId: "193291360466",
+          appId: "1:193291360466:web:f1d82f269d309449fef50b",
+          measurementId: "G-XS4BBD2464"
+        };
+        firebase.initializeApp(firebaseConfig);
+        analytics = firebase.analytics();
+      });
 
-    // // OLD GA
-    // dynamicallyLoadJS(["https://www.googletagmanager.com/gtag/js?id=UA-173030560-1"], () => {
-    //   window.dataLayer = window.dataLayer || [];
-    //   function gtag(){dataLayer.push(arguments);}
-    //   gtag('js', new Date());
-    //   gtag('config', 'UA-173030560-1');
-    // })
+    // OLD GA
+    dynamicallyLoadJS(["https://www.googletagmanager.com/gtag/js?id=UA-173030560-1"], () => {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-173030560-1');
+    })
 
   }
 );
