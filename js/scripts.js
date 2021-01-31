@@ -454,6 +454,16 @@ function isVisible($el, offset=0) {
 }
 
 
+// @see https://infoheap.com/jquery-check-if-element-is-visible-in-viewport/
+function isVisibleOrHasPassed($el) {
+  var winTop = $(window).scrollTop();
+  var winBottom = winTop + $(window).height();
+  var elTop = $el.offset().top;
+	var elBottom = elTop + $el.height();
+  return (elBottom <= winBottom);
+}
+
+
 function dynamicallyLoadJS(javascripts, finishAction){
 	var jsToLoadCount = javascripts.length;
 	for(var i =0; i < javascripts.length; i++){
@@ -476,35 +486,57 @@ function includeHTML() {
   for (i = 0; i < z.length; i++) {
     elmnt = z[i];
     /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("include-html");
+		var file = elmnt.getAttribute("include-html");
+		var isLazy = false;
+		var isLazyLoaded = false;
+		if (!file) {
+			file = elmnt.getAttribute("lazy-include-html");
+			isLazy = true
+		}
     if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-						elmnt.innerHTML = this.responseText;
-						var jsStartTagPos = this.responseText.indexOf("<script>");
-						if(jsStartTagPos){
-							jsStartTagPos += 8;
-							var jsContent = this.responseText.substring(jsStartTagPos);
-							var jsEndTagPos = jsContent.indexOf("</script>");
-							jsContent = jsContent.substring(0, jsEndTagPos);
-							eval(jsContent)
-						}
+			if(isLazy){
+				const prevElement = z[i-1];
+				var onScrollListener = () => {
+					if(isVisibleOrHasPassed($(prevElement)) && !isLazyLoaded){
+						isLazyLoaded = true;
+						performRequest(elmnt, file, isLazy);
+						document.removeEventListener('scroll', onScrollListener);
 					}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
-          elmnt.removeAttribute("include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /* Exit the function: */
-      return;
-    }
-  }
+				}
+				document.addEventListener('scroll', onScrollListener);
+				elmnt.removeAttribute("lazy-include-html");
+				includeHTML();
+			}
+			else {
+				performRequest(elmnt, file, isLazy);
+			}
+			return;
+		}
+	}
+
+	function performRequest(elmnt, file, isLazy){
+		$.ajax({
+			url: file,
+			context: document.body
+		}).done(function(data) {
+			elmnt.innerHTML = data;
+			var jsStartTagPos = data.indexOf("<script>");
+			if(jsStartTagPos){
+				jsStartTagPos += 8;
+				var jsContent = data.substring(jsStartTagPos);
+				var jsEndTagPos = jsContent.indexOf("</script>");
+				jsContent = jsContent.substring(0, jsEndTagPos);
+				eval(jsContent)
+				if(isLazy && typeof scrollme !== 'undefined'){
+					scrollme.init($(elmnt));
+				}
+			}
+			if(!isLazy){
+				elmnt.removeAttribute("include-html");
+				includeHTML();
+			}
+		});
+	}
 }
 
 
