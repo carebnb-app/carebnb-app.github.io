@@ -213,20 +213,8 @@ $(document).ready(function(){
 
 });
 
-$(window).load(function(){
 
-  "use strict";
-  	
-  
-	// Align Elements Vertically
-	
-	alignVertical();
-	alignBottom();
-	
-	$(window).resize(function(){
-		alignVertical();
-		alignBottom();
-	});
+function startIsotope(){
 	
 	// Isotope Projects
 	
@@ -254,6 +242,23 @@ $(window).load(function(){
 	  masonry: {
 		  gutter: 0
 		}
+	});
+
+}
+
+$(window).load(function(){
+
+  "use strict";
+  	
+  
+	// Align Elements Vertically
+	
+	alignVertical();
+	alignBottom();
+	
+	$(window).resize(function(){
+		alignVertical();
+		alignBottom();
 	});
     
     // Remove Loader
