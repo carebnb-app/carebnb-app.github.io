@@ -305,28 +305,6 @@ function alignBottom(){
 	});
 }
 
-// Youtube Background Handling
-
-function onYouTubeIframeAPIReady() {
-	$(window).load(function(){
-		$('.youtube-bg-iframe').each(function(index){
-			$(this).attr('id', 'yt-'+index);
-			var player = new YT.Player($(this).attr('id'), {
-				events: {
-				'onReady': function(){
-					player.mute();
-					player.playVideo();
-				},
-				'onStateChange': function(newState){
-					player.playVideo();
-				}
-			}
-			});
-		});
-	});
-	
-}
-
 
 function onLoadGetNotified(){
 	
@@ -467,61 +445,61 @@ function isVisible($el, offset=0) {
   return ((elBottom - offset <= winBottom) && (elTop + offset >= winTop));
 }
 
-// @see https://infoheap.com/jquery-check-if-element-is-visible-in-viewport/
-function isVisibleOrHasPassed($el) {
-  var winTop = $(window).scrollTop();
-  var winBottom = winTop + $(window).height();
-  var elTop = $el.offset().top;
-	var elBottom = elTop + $el.height();
-  return (elBottom <= winBottom);
+
+function dynamicallyLoadJS(javascripts, finishAction){
+	var jsToLoadCount = javascripts.length;
+	for(var i =0; i < javascripts.length; i++){
+		var javascript = javascripts[i];
+		$.getScript(javascript, function(){
+			jsToLoadCount--;
+			if(jsToLoadCount == 0){
+				finishAction();
+			}
+		});
+	}
 }
 
 
-function setupLazySection(targetElem, triggerElem, callback=null, dynLoad={csss: null, javascripts: null}){
-	var isLoaded = false;
 
-	var finishAction = function(){
-		if(callback){
-			callback();
-		}
-		if(typeof scrollme !== 'undefined'){
-			scrollme.init(targetElem);
-		}
-	}
-
-	var detectScroll = function () {
-		if(isVisibleOrHasPassed(triggerElem)){
-			loadContent();
-		}
-	}
-
-	var loadContent = function(){
-		if(!isLoaded){
-			isLoaded = true;
-			document.removeEventListener('scroll', detectScroll);
-			if(dynLoad.csss){
-				for(var i =0; i < dynLoad.csss.length; i++){
-					var css = dynLoad.csss[i];
-					$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', css) );
-				}
-			}
-			if(dynLoad.javascripts){
-				var jsToLoadCount = dynLoad.javascripts.length;
-				for(var i =0; i < dynLoad.javascripts.length; i++){
-					var javascript = dynLoad.javascripts[i];
-					$.getScript(javascript, function(){
-						jsToLoadCount--;
-						if(jsToLoadCount == 0){
-							finishAction();
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+						elmnt.innerHTML = this.responseText;
+						var jsStartTagPos = this.responseText.indexOf("<script>");
+						if(jsStartTagPos){
+							jsStartTagPos += 8;
+							var jsContent = this.responseText.substring(jsStartTagPos);
+							var jsEndTagPos = jsContent.indexOf("</script>");
+							jsContent = jsContent.substring(0, jsEndTagPos);
+							eval(jsContent)
 						}
-					});
-				}
-			}
-			else{
-				finishAction();
-			}
-		}
-	}
+					}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
 
-	document.addEventListener('scroll', detectScroll);
+
+function initPage(){
+	includeHTML();
 }

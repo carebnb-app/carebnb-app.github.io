@@ -1,0 +1,44 @@
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+<script>
+// COMMON
+dynamicallyLoadJS([
+  "/js/jquery.plugin.min.js",
+  "/js/bootstrap.min.js",
+  "/js/isotope.min.js",
+  "/js/scrollme.min.js?v=2",
+  "/js/modernizr-2.6.2-respond-1.1.0.min.js",
+  "/js/lottie.min.js"], () => {
+
+    if(initScript){
+      initScript()
+    }
+
+    // // FIREBASE
+    // dynamicallyLoadJS([
+    //   "https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js",
+    //   "https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"], () => {
+    //     var firebaseConfig = {
+    //       apiKey: "AIzaSyAdaToiNFch9WkOJGRQ79DqSkpZ40vIE9Q",
+    //       authDomain: "carebnb-site.firebaseapp.com",
+    //       projectId: "carebnb-site",
+    //       storageBucket: "carebnb-site.appspot.com",
+    //       messagingSenderId: "193291360466",
+    //       appId: "1:193291360466:web:f1d82f269d309449fef50b",
+    //       measurementId: "G-XS4BBD2464"
+    //     };
+    //     firebase.initializeApp(firebaseConfig);
+    //     analytics = firebase.analytics();
+    //   });
+
+    // // OLD GA
+    // dynamicallyLoadJS(["https://www.googletagmanager.com/gtag/js?id=UA-173030560-1"], () => {
+    //   window.dataLayer = window.dataLayer || [];
+    //   function gtag(){dataLayer.push(arguments);}
+    //   gtag('js', new Date());
+    //   gtag('config', 'UA-173030560-1');
+    // })
+
+  }
+);
+</script>
