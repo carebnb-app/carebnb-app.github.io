@@ -10,24 +10,13 @@
   </div>
 
   <div class="row">
-    <div
-        class="scrollme animateme col-sm-4"
-        data-when="enter" 
-        data-from="0.75" 
-        data-to="0" 
-        data-opacity="0" >
+    <div class="col-sm-4">
       <div id="lottie-chat"></div>
     </div>
   
     <div class="col-sm-8 align-vertical no-align-mobile clearfix">
     
-      <div 
-          class="scrollme animateme col-md-6 no-pad-left clearfix"
-          data-when="enter" 
-          data-from="0.75" 
-          data-to="0" 
-          data-opacity="0" 
-          data-translatex="200" >
+      <div class="col-md-6 no-pad-left clearfix">
         <div class="feature feature-icon-small">
           <i class="icon icon-gears"></i>
           <h6>Machine learning</h6>
@@ -37,13 +26,7 @@
         </div>
       </div>
     
-      <div 
-          class="scrollme animateme col-md-6 no-pad-left clearfix"
-          data-when="enter" 
-          data-from="0.75" 
-          data-to="0" 
-          data-opacity="0" 
-          data-translatex="300" >
+      <div class="col-md-6 no-pad-left clearfix">
         <div class="feature feature-icon-small">
           <i class="icon icon-speedometer"></i>
           <h6>Efficiency at its finest</h6>
@@ -58,12 +41,7 @@
 
 </div>
 
-<div
-    class="scrollme animateme text-center"
-    data-when="enter" 
-    data-from="0.75" 
-    data-to="0" 
-    data-opacity="0" >
+<div class="text-center">
   <br />
   <a href="#section-get-notified" class="btn btn-primary">Try carebnb for free</a>
   &nbsp;&nbsp;&nbsp;
@@ -71,8 +49,6 @@
 </div>
 
 <script>
-scrollme.init($('#section-smart-chatbot-agent'));
-
 $.ajax({url: "lottie/chat.json", success: function(lottieHotelBell){
   var lottieHotelBell = lottie.loadAnimation({
     container: document.querySelector('#lottie-chat'),

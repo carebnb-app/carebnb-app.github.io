@@ -135,14 +135,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-5">
-							<h1
-									class="scrollme animateme"
-									data-when="enter" 
-									data-from="0.5" 
-									data-to="0" 
-									data-crop="false" 
-									data-opacity="0"
-									data-scale="1.5">
+							<h1>
 								Customize it
 							</h1>
 							<p class="lead">
@@ -204,14 +197,7 @@
   
 					<div class="row">
 						<div class="text-center">
-							<h1
-									class="scrollme animateme"
-									data-when="enter" 
-									data-from="0.5" 
-									data-to="0" 
-									data-crop="false" 
-									data-opacity="0"
-									data-scale="1.5">
+							<h1>
 								Custom access codes
 							</h1>
 							<p class="lead">
@@ -223,12 +209,7 @@
 						</div>
 					</div>
 				
-					<div
-							class="scrollme animateme row text-center"
-							data-when="enter" 
-							data-from="0.75" 
-							data-to="0" 
-							data-opacity="0" >
+					<div class="row text-center">
 						<br /><a href="#section-get-notified" class="btn btn-primary">Try carebnb for free</a>
 						&nbsp;&nbsp;&nbsp;
 						<a href="../custom-access-codes/" class="btn btn-primary btn-filled">Know more</a>
@@ -238,20 +219,17 @@
 			</section>
 
 
-			<section lazy-include-html="/includes/section-get-notified.html" id="section-get-notified"></section>
+			<section lazy-include-html="/includes/section-get-notified.html" id="section-get-notified" class="container bg-primary"></section>
 
 
 		</div>
 
 
-		<section lazy-include-html="/includes/section-footer.html"></section>
+		<section lazy-include-html="/includes/section-footer.html" class="footer-container bg-secondary-1"></section>
 		<div include-html="/includes/bottom-scripts.html"></div>
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/scripts.js?v=6"></script>
 		<script type="text/javascript">
-			var initScript = () => {
-				scrollme.init();
-			}
 			initPage();
 		</script>
 

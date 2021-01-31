@@ -10,24 +10,13 @@
   </div>
 
   <div class="row">
-    <div
-        class="scrollme animateme col-sm-4"
-        data-when="enter" 
-        data-from="0.75" 
-        data-to="0" 
-        data-opacity="0" >
+    <div class="col-sm-4">
       <div id="lottie-hotel"></div>
     </div>
   
     <div class="col-sm-8 align-vertical no-align-mobile clearfix">
     
-      <div 
-          class="scrollme animateme col-md-6 no-pad-left clearfix"
-          data-when="enter" 
-          data-from="0.75" 
-          data-to="0" 
-          data-opacity="0" 
-          data-translatex="200" >
+      <div class="col-md-6 no-pad-left clearfix">
         <div class="feature feature-icon-small">
           <i class="icon icon-chat"></i>
           <h6>Messaging</h6>
@@ -38,13 +27,7 @@
         </div>
       </div>
     
-      <div 
-          class="scrollme animateme col-md-6 no-pad-left clearfix"
-          data-when="enter" 
-          data-from="0.75" 
-          data-to="0" 
-          data-opacity="0" 
-          data-translatex="300" >
+      <div class="col-md-6 no-pad-left clearfix">
         <div class="feature feature-icon-small">
           <i class="icon icon-mobile"></i>
           <h6>Customize it</h6>
@@ -60,12 +43,7 @@
 
 </div>
 
-<div
-    class="scrollme animateme text-center"
-    data-when="enter" 
-    data-from="0.75" 
-    data-to="0" 
-    data-opacity="0" >
+<div class="text-center">
   <br />
   <a href="#section-get-notified" class="btn btn-primary">Try carebnb for free</a>
   &nbsp;&nbsp;&nbsp;
@@ -73,7 +51,6 @@
 </div>
 
 <script>
-scrollme.init($('#section-auto-checkin-checkout'));
 $.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
   var lottieHotelBell = lottie.loadAnimation({
     container: document.querySelector('#lottie-hotel'),

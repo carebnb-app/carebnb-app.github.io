@@ -5,13 +5,9 @@
 dynamicallyLoadJS([
   "/js/jquery.plugin.min.js",
   "/js/bootstrap.min.js",
-  "/js/scrollme.min.js?v=2",
   "/js/modernizr-2.6.2-respond-1.1.0.min.js",
   "/js/lottie.min.js"], () => {
-
-    if(typeof initScript !== 'undefined'){
-      initScript();
-    }
+    
     startIsotope();
 
     // FIREBASE
