@@ -51,26 +51,28 @@
 </div>
 
 <script>
-$.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
-  var lottieHotelBell = lottie.loadAnimation({
-    container: document.querySelector('#lottie-hotel'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: lottieHotelBell, 
-    rendererSettings: {
-      clearCanvas: false,
-      progressiveLoad: false
-    }
-  });
-  var isPlaying = false;
-  document.addEventListener('scroll', function (event) {
-    if(isVisible($('#lottie-hotel'), 250)){
-      if(!isPlaying){
-        isPlaying = true;
-        lottieHotelBell.play();
+dynamicallyLoadJS(["/js/lottie.min.js"], () => {
+  $.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
+    var lottieHotelBell = lottie.loadAnimation({
+      container: document.querySelector('#lottie-hotel'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: false,
+      animationData: lottieHotelBell, 
+      rendererSettings: {
+        clearCanvas: false,
+        progressiveLoad: false
       }
-    }
-  });
-}});
+    });
+    var isPlaying = false;
+    document.addEventListener('scroll', function (event) {
+      if(isVisible($('#lottie-hotel'), 250)){
+        if(!isPlaying){
+          isPlaying = true;
+          lottieHotelBell.play();
+        }
+      }
+    });
+  }});
+});
 </script>

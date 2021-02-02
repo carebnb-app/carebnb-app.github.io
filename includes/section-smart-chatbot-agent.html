@@ -49,26 +49,28 @@
 </div>
 
 <script>
-$.ajax({url: "lottie/chat.json", success: function(lottieHotelBell){
-  var lottieHotelBell = lottie.loadAnimation({
-    container: document.querySelector('#lottie-chat'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: false,
-    animationData: lottieHotelBell, 
-    rendererSettings: {
-      clearCanvas: false,
-      progressiveLoad: false
-    }
-  });
-  var isPlaying = false;
-  document.addEventListener('scroll', function (event) {
-    if(isVisible($('#lottie-chat'), 250)){
-      if(!isPlaying){
-        isPlaying = true;
-        lottieHotelBell.play();
+dynamicallyLoadJS(["/js/lottie.min.js"], () => {
+  $.ajax({url: "lottie/chat.json", success: function(lottieHotelBell){
+    var lottieHotelBell = lottie.loadAnimation({
+      container: document.querySelector('#lottie-chat'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: false,
+      animationData: lottieHotelBell, 
+      rendererSettings: {
+        clearCanvas: false,
+        progressiveLoad: false
       }
-    }
-  });
-}});
+    });
+    var isPlaying = false;
+    document.addEventListener('scroll', function (event) {
+      if(isVisible($('#lottie-chat'), 250)){
+        if(!isPlaying){
+          isPlaying = true;
+          lottieHotelBell.play();
+        }
+      }
+    });
+  }});
+});
 </script>
