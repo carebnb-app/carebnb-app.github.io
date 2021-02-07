@@ -47,12 +47,12 @@
   <br />
   <a href="#section-get-notified" class="btn btn-primary">Try carebnb for free</a>
   &nbsp;&nbsp;&nbsp;
-  <a href="./services/automatic-check-in-check-out/" class="btn btn-primary btn-filled">Know more</a>
+  <a href="/services/automatic-check-in-check-out/" class="btn btn-primary btn-filled">Know more</a>
 </div>
 
 <script>
 dynamicallyLoadJS(["/js/lottie.min.js"], () => {
-  $.ajax({url: "lottie/hotel-bell.json", success: function(lottieHotelBell){
+  $.ajax({url: "/lottie/hotel-bell.json", success: function(lottieHotelBell){
     var lottieHotelBell = lottie.loadAnimation({
       container: document.querySelector('#lottie-hotel'),
       renderer: 'svg',
