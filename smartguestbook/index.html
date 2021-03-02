@@ -77,7 +77,7 @@
 	
 	<section class="description">
 		<div>
-			<lottie-player renderer="canvas" src="img/json/guests-stories.json" background="white" speed="1" loop autoplay id="lottie-stories"></lottie-player>
+			<lottie-player renderer="" src="img/json/guests-stories.json" background="white" speed="1" loop autoplay id="lottie-stories"></lottie-player>
 			<h2>Share your <strong>guests&nbsp;stories</strong></h2>
 			<p>
 				Share exotic stories among guests.
@@ -85,7 +85,7 @@
 			</p>
 		</div>
 		<div>
-			<lottie-player renderer="canvas" src="img/json/day-night.json" background="white" speed="1" loop autoplay id="lottie-auto-day-night"></lottie-player>
+			<lottie-player renderer="svg" src="img/json/day-night.json" background="white" speed="1" loop autoplay id="lottie-auto-day-night"></lottie-player>
 			<h2>Auto <strong>day-night</strong> mode</h2>
 			<p>
 				Lighter at daytime, dark at night.
@@ -93,7 +93,7 @@
 			</p>
 		</div>
 		<div>
-			<lottie-player renderer="canvas" src="img/json/easy-fun.json" background="white" speed="1" loop autoplay id="lottie-easy-and-fun"></lottie-player>
+			<lottie-player renderer="" src="img/json/easy-fun.json" background="white" speed="1" loop autoplay id="lottie-easy-and-fun"></lottie-player>
 			<h2>Easy and <strong>fun</strong> to use</h2>
 			<p>
 				Intuitive interface easy to be used by anyone.
@@ -143,6 +143,29 @@
 
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+
+<script>
+
+	const lottieDayNight = document.getElementById('lottie-auto-day-night');
+	const lottieStories = document.getElementById('lottie-stories');
+	const lottieEasyFun = document.getElementById('lottie-easy-and-fun');
+
+	window.addEventListener('resize', function(){
+		if(window.innerWidth < 800){
+			lottieDayNight.style.width = '600px';
+			lottieStories.setAttribute('renderer', 'canvas');
+			lottieEasyFun.setAttribute('renderer', 'canvas');
+			console.log(window.innerWidth);
+		} else if(window.innerWidth > 800){
+			lottieDayNight.style.width = 'auto';
+			lottieStories.setAttribute('renderer', 'svg');
+			lottieEasyFun.setAttribute('renderer', 'svg');
+		}
+	});
+
+	
+
+</script>
 
 </body>
 </html>
