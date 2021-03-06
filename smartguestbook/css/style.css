@@ -170,13 +170,11 @@ body .pricing img {
 body footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  align-items: center;
   padding: 150px 0 50px 0;
 }
-body footer a {
-  width: 70px;
-  margin: 0 auto;
+body footer img {
+  padding: 30px 0;
 }
 
 .cta {

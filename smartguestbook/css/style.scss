@@ -250,19 +250,19 @@ body{
 	}
 
 	footer{
-		display:flex;
+		display:flex; 
 		flex-direction: column;
-		justify-content: center;
-		text-align: center;
+		align-items: center;
 		padding: $spacing-large*3 0 $spacing-large 0;
 
-		a{
-			width: 70px;
-			margin: 0 auto;
+		img{
+			padding: 30px 0;
 		}
 	}
 
 } // end body
+
+
 
 
 .cta{
