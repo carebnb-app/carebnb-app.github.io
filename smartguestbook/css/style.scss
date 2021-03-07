@@ -160,9 +160,9 @@ body{
 			font-size: $font-size*1.6;
 		}
 
-		img{
-			border-radius: $radius-secondary;
-		}
+		// img{
+		// 	border-radius: $radius-secondary;
+		// }
 
 		h2{
 			padding-top: 30px;
@@ -186,7 +186,35 @@ body{
 			}
 		}
 
+		#lottie-alternative{
+			position:relative;
+	
+			img{
+				position: absolute;
+				top: 0;
+				left: 5%;
+				max-width: 330px;
+
+				&:last-child{
+					// animation: fadeIn ease 4s;
+				}
+				
+			}
+
+		}
+
 	}
+
+	.fadein{
+		animation: fadein 3s infinite;
+		animation-direction: alternate;
+	}
+
+	@keyframes fadein{
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+
 
 	.gallery{
 		display:flex;

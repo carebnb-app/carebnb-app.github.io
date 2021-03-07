@@ -1,3 +1,29 @@
+const lottieDayNight = document.getElementById('lottie-auto-day-night');
+const lottieStories = document.getElementById('lottie-stories');
+const lottieEasyFun = document.getElementById('lottie-easy-and-fun');
+
+const lottieAlternative = document.getElementById('lottie-alternative');
+lottieAlternative.style.display = 'none';
+
+if(window.innerWidth < 800){
+    lottieAlternative.style.display = 'block';
+    lottieAlternative.style.paddingBottom = '225px';
+    lottieDayNight.style.display = 'none';
+}
+
+console.log(lottieAlternative);
+    
+window.addEventListener('resize', function(){
+	if(window.innerWidth < 800){
+		lottieDayNight.style.display = 'none';
+        lottieAlternative.style.display = 'block';
+	} else if(window.innerWidth > 800){
+        lottieAlternative.style.display = 'none';
+        lottieDayNight.style.display = 'block';
+	}
+});
+
+
 // window.addEventListener('scroll', () => {
 // 	if(pageYOffset > 30){
 // 		const menu = document.querySelector('.menu');
