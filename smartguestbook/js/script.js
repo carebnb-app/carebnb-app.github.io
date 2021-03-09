@@ -7,7 +7,7 @@ lottieAlternative.style.display = 'none';
 
 if(window.innerWidth < 800){
     lottieAlternative.style.display = 'block';
-    lottieAlternative.style.paddingBottom = '225px';
+    lottieAlternative.style.paddingBottom = '210px';
     lottieDayNight.style.display = 'none';
 }
 
@@ -17,11 +17,17 @@ window.addEventListener('resize', function(){
 	if(window.innerWidth < 800){
 		lottieDayNight.style.display = 'none';
         lottieAlternative.style.display = 'block';
+        lottieStories.setAttribute('renderer', 'canvas');
+        lottieEasyFun.setAttribute('renderer', 'canvas');
 	} else if(window.innerWidth > 800){
         lottieAlternative.style.display = 'none';
         lottieDayNight.style.display = 'block';
+        lottieStories.setAttribute('renderer', 'svg');
+        lottieEasyFun.setAttribute('renderer', 'svg');
 	}
 });
+
+
 
 
 // window.addEventListener('scroll', () => {

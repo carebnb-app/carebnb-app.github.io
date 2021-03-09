@@ -128,12 +128,11 @@ body .description ul li {
 }
 body .description #lottie-alternative {
   position: relative;
+  width: 305px;
+  margin: 0 auto;
 }
 body .description #lottie-alternative img {
   position: absolute;
-  top: 0;
-  left: 5%;
-  max-width: 330px;
 }
 body .fadein {
   animation: fadein 3s infinite;
