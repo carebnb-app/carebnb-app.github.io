@@ -1,0 +1,232 @@
+  <div class="container calculator">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1 class="text-white">Calculate the payment according to the number of listings you have</h1>
+      </div>
+    </div><!--end of row-->
+    
+      <div class="col-md-2 col-md-offset-2  col-sm-3 no-pad">
+
+        <!-- <div class="row">
+          <h3>I manage</h3>
+        </div> -->
+        <div class="row">
+            <button class="decrease">-</button>
+            <input type="text" value="1" class="airbnb-number">
+            <button class="increase">+</button>
+        </div>
+        <!-- <div class="row">
+          <h3>airbnbs</h3>
+        </div> -->
+
+      </div>
+      
+      <div class="col-md-5 col-md-offset-2 col-sm-3 no-pad">
+        <div class="pricing-table">
+          <div class="price">
+            <span class="sub">$</span>
+            <span class="amount">29.90</span>
+            <span class="sub"></span>
+          </div>
+          <ul class="features">
+            <li class="monthly-price-wrapper">$ <strong class="monthly-price">29.90</strong> per listing / month</li>
+            <li class="discount-wrapper"><strong class="discount">0%</strong> discount applied</li>
+            <!-- <li><strong>Unlimited </strong> guests</li> -->
+          </ul>
+          <a href="#" class="btn btn-primary btn-white">Sign me up</a>
+        </div>
+      </div>
+      
+    </div><!--end of row-->
+    
+  </div><!--end of container-->
+
+  <script>
+    const increase = document.querySelector('.increase');
+    const decrease = document.querySelector('.decrease');
+    const amount = document.querySelector('.amount');
+    const price = document.querySelector('.monthly-price');
+    const discount = document.querySelector('.discount');
+    const monthlyPriceWrapper = document.querySelector('.monthly-price-wrapper');
+    const discountWrapper = document.querySelector('.discount-wrapper');
+
+    let airbnbNumber;
+
+    console.log(typeof airbnbNumber);
+
+    increase.addEventListener('click', () => {
+      airbnbNumber = parseInt(document.querySelector('.airbnb-number').value);
+      airbnbNumber++;
+      document.querySelector('.airbnb-number').value = airbnbNumber;
+      refreshPrice();
+    });
+
+    decrease.addEventListener('click', () => {
+      airbnbNumber = parseInt(document.querySelector('.airbnb-number').value);
+      if(airbnbNumber > 1){
+        airbnbNumber--;
+        document.querySelector('.airbnb-number').value = airbnbNumber--;
+        refreshPrice();
+      }
+    });
+
+
+    const refreshPrice = () => {
+      if(airbnbNumber === 41){
+        price.textContent = '21.53';
+        discount.textContent = '28%';
+        calcAmount();
+        animateDiscount();
+      }
+      else if(airbnbNumber >= 41){
+        price.textContent = '20.33';
+        discount.textContent = '32%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber === 36){
+        animateDiscount();
+        price.textContent = '21.53';
+        discount.textContent = '28%';
+        calcAmount();
+      } else if(airbnbNumber >= 36){
+        price.textContent = '21.53';
+        discount.textContent = '28%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber === 31){
+        animateDiscount();
+        price.textContent = '22.72';
+        discount.textContent = '24%';
+        calcAmount();
+      } else if(airbnbNumber >= 31){
+        price.textContent = '22.72';
+        discount.textContent = '24%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber === 26){
+        animateDiscount();
+        price.textContent = '23.92';
+        discount.textContent = '20%';
+        calcAmount();
+      } else if(airbnbNumber >= 26){
+        price.textContent = '23.92';
+        discount.textContent = '20%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber === 21){
+        price.textContent = '25.16';
+        discount.textContent = '16%';
+        calcAmount();
+        animateDiscount();
+      } else if(airbnbNumber >= 21){
+        price.textContent = '25.16';
+        discount.textContent = '16%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber === 16){
+        price.textContent = '26.31';
+        discount.textContent = '12%';
+        calcAmount();
+        animateDiscount();
+      } else if(airbnbNumber >= 16){
+        price.textContent = '26.31';
+        discount.textContent = '12%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber === 11){
+        price.textContent = '27.51';
+        discount.textContent = '8%';
+        calcAmount();
+        animateDiscount();
+      } else if(airbnbNumber >= 11){
+        price.textContent = '27.51';
+        discount.textContent = '8%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber === 6){
+        price.textContent = '28.70';
+        discount.textContent = '4%';
+        calcAmount();
+        animateDiscount();
+      } else if(airbnbNumber >= 6){
+        price.textContent = '28.70';
+        discount.textContent = '4%';
+        calcAmount();
+        disAnimateDiscount();
+      } else if(airbnbNumber >= 1){
+        price.textContent = '29.90';
+        calcAmount();
+        disAnimateDiscount();
+      }
+    }
+
+    const calcAmount = () => {
+      let newAmount = parseInt(airbnbNumber) * parseInt(price.textContent).toFixed(2);
+      amount.textContent = newAmount;
+    }
+
+    const animateDiscount = () => {
+      monthlyPriceWrapper.classList.add('anim');
+      discountWrapper.classList.add('anim');
+    }
+
+    const disAnimateDiscount = () => {
+      monthlyPriceWrapper.classList.remove('anim');
+      discountWrapper.classList.remove('anim');
+    } 
+
+
+  </script>
+
+  <style>
+    .pricing-1 h3{
+    color: white;
+    text-align: center;
+    }
+
+    .airbnb-number{
+      background: none;
+      border:2px solid #546572;
+      text-align: center;
+      padding: 30px;
+      border-radius: 20px;
+      color:white;
+      width:60%;
+      font-size:4em;
+      outline: 0;
+    }
+
+    button{
+      background: none;
+      border: none;
+      font-size: 4em;
+      font-weight: bold;
+      color: white;
+      outline: 0;
+    }
+
+    .calculator .pricing-table{
+      border-radius: 20px;
+    }
+
+    .pricing-table .features li{
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    .pricing-table .features li strong{
+      font-size: 30px;
+    }
+
+    .anim {
+      animation: scaling 1s alternate ease-in-out;
+      animation-iteration-count: 1;
+    }
+
+    @keyframes scaling {
+      0%   {transform: scale(1);}
+      50% {transform: scale(1.2);}
+      100% {transform: scale(1);}
+    }
+
+  </style>

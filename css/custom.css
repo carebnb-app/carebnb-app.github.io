@@ -1,5 +1,13 @@
 html{scroll-behavior: smooth;}
-
+h1,h2,h3,h4,h5,h6,ul,ol,ul li,ol,li,ul li a,ol li a,p,.alt-font{font-family: 'Oxygen', sans-serif !important;}
+h1.large-font{font-size:46px !important;font-weight: bold;line-height:60px !important;}
+h2.large-font{font-size:38px !important;font-weight: bold;padding-bottom:30px;}
+p.lead.large-font{font-size:18px;line-height:32px;}
+p.large-font{font-size:18px;line-height:32px;}
+p.medium-font{font-size:16px;line-height:28px;}
+.feature h4{font-weight:bold;padding-bottom:15px;}
+.alt-font{font-size:14px;}
+#section-smart-info-board-image-slider ul li picture img{border-radius: 30px;}
 .hero-slider .slides li{height:530px !important;}
 .overlay:before{background:#EB5757;}
 .bg-primary{background-color:#EB5757 !important;}
@@ -18,7 +26,14 @@ html{scroll-behavior: smooth;}
 .hero-divider:before{opacity:0.8;background:#000000;}
 .lead-video{font-size:1.6em !important;line-height:1.8 !important;}
 .bold{font-weight:700;}
-.pricing-table{border:2px solid rgba(255, 255, 255, 0.2);border-radius:25px;}
+.pricing-table{border:2px solid rgba(255, 255, 255, 0.2);}
+.pricing-tables .col-md-4:first-child .pricing-table {border-radius: 25px 0px 0px 25px;}
+.pricing-tables .col-md-4:last-child .pricing-table {border-radius: 0px 25px 25px 0px;}
+.pricing-table.green {background-color: #0c3b00 !important;}
+.pricing-table.blue {background-color: #35008a !important;}
+.pricing-table.grey {background-color: #3b3b3b !important;}
+.pricing-table.yellow {background-color: #746200 !important;}
+.pricing-table.red {background-color: #EB5757 !important;}
 /*.bg-secondary-1{background:#282828 !important;}*/
 .strip h3{top:6px;}
 .strip .signup-email-field{top:0;}
