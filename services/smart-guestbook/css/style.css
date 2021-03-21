@@ -1,0 +1,158 @@
+body {
+  font-family: "Oxygen", sans-serif;
+  color: #0b132a;
+}
+body h1 {
+  font-weight: 700;
+}
+body h2 {
+  font-size: 3.5em;
+  font-weight: 300;
+  text-align: center;
+}
+body .main-title {
+  padding: 0px 30px;
+  font-weight: 700;
+  color: #4f5665;
+}
+body .no-padding {
+  padding: 0;
+}
+body a {
+  text-decoration: none;
+  color: #0b132a;
+}
+body ul, body ol {
+  list-style: none;
+}
+body strong {
+  color: #eb5757;
+}
+body header {
+  background: url("../img/smartguestbook-hero.jpg");
+  background-size: cover;
+  background-position: center right;
+  text-align: center;
+  height: 100vh;
+  box-shadow: inset 0 0 0 2000px rgba(40, 30, 30, 0.6);
+}
+body header div {
+  padding: 40vh 0;
+}
+body header h1 {
+  font-size: 4em;
+  font-weight: 300;
+  padding-bottom: 20px;
+  color: white;
+}
+body header h3 {
+  font-size: 1.7em;
+  color: white;
+}
+body header a {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+}
+body header a lottie-player {
+  padding-top: 50px;
+}
+body header strong {
+  color: white;
+}
+body h3 {
+  color: #4f5665;
+  font-weight: 300;
+  font-size: 1.4em;
+}
+body .container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+body .description {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+body .description div {
+  align-self: center;
+  padding-bottom: 80px;
+}
+body .description p {
+  color: #4f5665;
+  font-weight: 300;
+  font-size: 1.6em;
+  line-height: 35px;
+}
+body .description h2 {
+  line-height: 80px;
+}
+body .description h3 {
+  font-size: 3em;
+  text-align: center;
+}
+body .description #lottie-alternative {
+  position: relative;
+  width: 305px;
+  margin: 0 auto;
+}
+body .description #lottie-alternative img {
+  position: absolute;
+}
+body .fadein {
+  animation: fadein 3s infinite;
+  animation-direction: alternate;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body footer strong {
+  color: #ffffff;
+}
+
+.cta {
+  border: 1px solid #eb5757;
+  border-radius: 50px;
+  padding: 1em 3em;
+  color: #eb5757;
+  font-weight: 700;
+}
+.cta:hover {
+  background: #eb5757;
+  color: white;
+  transition: 1s;
+}
+
+.cta-secondary {
+  border: 1px solid #eb5757;
+  border-radius: 50px;
+  padding: 1em 3em;
+  color: #eb5757;
+  font-weight: 700;
+  background: #eb5757;
+  border-radius: 20px;
+  color: white;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.cta-secondary:hover {
+  background: #eb5757;
+  color: white;
+  transition: 1s;
+}
+.cta-secondary:hover {
+  transition-timing-function: ease;
+  color: #eb5757;
+  background: white;
+}
+
+/*# sourceMappingURL=style.css.map */

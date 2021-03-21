@@ -1,0 +1,202 @@
+// CAREBNB TRADEMARK 2020 
+@import "_variables";
+
+@mixin cta() {
+	border: 1px solid $primary-color;
+	border-radius: $radius-primary;
+	padding:1em 3em;
+	color:$primary-color;
+	font-weight: $font-bold;
+
+	&:hover{
+		background: $primary-color;
+		color: white;
+		transition:1s;
+	}
+
+}
+
+body{
+	
+	font-family: $font-stack;
+	color: $font-color-primary;
+	// line-height: $font-size*3;
+
+	h1{
+		font-weight: $font-bold;
+		// text-align: center;
+	}
+
+	h2{
+		font-size: $font-size*3.5;
+		font-weight: $font-light;
+		text-align: center;
+	}
+
+	.main-title{
+		padding: 0px 30px;
+		font-weight: $font-bold;
+		color: $font-color-secondary;
+	}
+
+	.no-padding{
+		padding: 0;
+	}
+
+	a{
+		text-decoration:none;
+		color: $font-color-primary;
+	}
+
+	ul,ol{
+		list-style:none;
+	}
+
+	strong{
+		color: $primary-color;
+	}
+
+	// .hero{
+	// 	display:flex;
+	// 	justify-content:center;
+	// 	align-items:flex-end;
+	// 	padding-top:120px;
+	// }
+
+
+	header{
+		background:url('../img/smartguestbook-hero.jpg');
+		background-size: cover;
+		background-position: center right;
+		text-align:center;
+		height: 100vh;
+		box-shadow:inset 0 0 0 2000px rgba(40, 30, 30, 0.6);
+
+		div{
+			padding:40vh 0;
+		}
+
+		h1{
+			font-size: ($font-size)*4;
+			font-weight: $font-light;
+			padding-bottom: $spacing-regular;
+			color: white;
+		}
+
+		h3{
+			font-size: ($font-size)*1.7;
+			color: white;
+		}
+
+		a{
+			display: block;
+			width: 50px;
+			margin: 0 auto;
+
+			lottie-player{
+				padding-top: 50px;
+			}
+		}
+
+		strong{
+			color: white;
+		}
+	}
+
+	h3{
+			color: $font-color-secondary;
+			font-weight: $font-light;
+			font-size: ($font-size)*1.4;
+		}
+
+	.container{
+		max-width: 1140px;
+		margin:0 auto;
+	}
+
+	.description{
+
+		display:flex;
+		flex-direction:column;
+		// justify-content: center;
+		padding-bottom: $spacing-large*2;
+		text-align: center;
+		padding-bottom: 100px;
+
+		div{
+			align-self: center;
+			padding-bottom: 80px;
+			// max-width:1200px;
+		}
+
+		p{
+			color: $font-color-secondary;
+    		font-weight: 300;
+			font-size: $font-size*1.6;
+			line-height: 35px;
+		}
+
+		h2{
+			line-height: 80px;
+			}
+
+		h3{
+			font-size:$font-size*3;
+			text-align:center;
+		}
+
+
+		#lottie-alternative{
+			position:relative;
+			width:305px;
+			margin:0 auto;
+	
+			img{
+				position: absolute;
+
+				
+			}
+
+		}
+
+	}
+
+	.fadein{
+		animation: fadein 3s infinite;
+		animation-direction: alternate;
+	}
+
+	@keyframes fadein{
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+
+	footer strong{
+		color: #ffffff;
+	}
+
+} // end body
+
+
+
+
+.cta{
+	@include cta();
+}
+
+.cta-secondary{
+	@include cta();
+	background: $primary-color;
+	border-radius: $radius-secondary;
+	color: white;
+	display:block;
+	width:250px;
+	margin:0 auto;
+	margin-top: $spacing-regular*2.5;
+
+	&:hover{
+		transition-timing-function: ease;
+		color: $primary-color;
+		background: white;
+	}
+}
