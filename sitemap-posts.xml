@@ -36,4 +36,11 @@
 			<image:loc>https://carebnb.app/blog/creative-hosting/images/creative-hosting.jpg</image:loc>
 		</image:image>
 	</url>
+	<url>
+		<loc>https://carebnb.app/blog/stop-being-hostage-over-reviews/</loc>
+		<lastmod>2021-03-27T09:00:00+00:00</lastmod>
+		<image:image>
+			<image:loc>https://carebnb.app/blog/stop-being-hostage-over-reviews/images/stop-being-hostage-over-reviews.jpg</image:loc>
+		</image:image>
+	</url>
 </urlset>
