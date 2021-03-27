@@ -52,7 +52,7 @@
 
 <script>
 dynamicallyLoadJS(["/js/lottie.min.js"], () => {
-  $.ajax({url: "lottie/chat.json", success: function(lottieHotelBell){
+  $.ajax({url: "/lottie/chat.json", success: function(lottieHotelBell){
     var lottieHotelBell = lottie.loadAnimation({
       container: document.querySelector('#lottie-chat'),
       renderer: 'svg',
