@@ -11,17 +11,17 @@
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 
-			<title>Airbnb chatbot for hosts</title>
-			<meta name="description" content="Fully automated Airbnb chatbot. An automation system that responds to your guests.">
+			<title>Smart Guestbook - Carebnb</title>
+			<meta name="description" content="Replace your old-fashioned paper guestbook with the only digital map guestbook">
 			<meta name="keywords" content="automation for hosts,airbnb business,airbnb automation,airbnb chatbot,airbnb agent"/>
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="https://carebnb.app/services/smart-chatbot-agent/" />
-			<meta property="og:image" content="https://carebnb.app/images/meta/chatbot-for-hosts.jpg" />
+			<meta property="og:image" content="https://carebnb.app/services/smart-guestbook/img/smart-guestbook-for-airbnb-hosts.jpg" />
 			<meta property="og:image:type" content="image/jpg" />
 			<meta property="og:image:width" content="1024" />
 			<meta property="og:image:height" content="768" />
-			<meta property="og:title" content="Airbnb chatbot for hosts" />
-			<meta property="og:description" content="Fully automated Airbnb chatbot. An automation system that responds to your guests." />
+			<meta property="og:title" content="The next generation guestbook" />
+			<meta property="og:description" content="Replace your old-fashioned paper guestbook with the only digital map guestbook" />
 			
       <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
       <link href="../../css/theme-rocklobster.css" rel="stylesheet" type="text/css" media="all"/>
@@ -35,7 +35,7 @@
 		<link rel="stylesheet" type="text/css" href="css/mobile.css">	
 
       <!--[if gte IE 9]>
-        <link rel="stylesheet" type="text/css" href="css/ie9.css" />
+        <link rel="stylesheet" type="text/css" href="/css/ie9.css" />
       <![endif]-->
 
 		</head>
@@ -90,6 +90,83 @@
 						</a>
 					</div>
 				</header>
+
+
+
+
+				<section id="transform-ipad">
+			
+					<div class="background-image-holder">
+						<img class="background-image" alt="Background Image" src="../../img/grey-bg.jpg">
+					</div>
+				
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7 col-sm-6">
+								<h1>Transform your iPad into a Smart Guestbook</h1>
+								<p class="lead">
+									Our exclusive app will sync with your Airbnb account automatically.
+								</p>
+								<p>
+									We will detect your reservations and display exclusive personalized greetings to your guests.
+									<br />
+									With this fun and easy to use Smart Guestbook,
+									your guests will have a unique experience at sharing their experiences in your place.
+									<br />
+									<br />
+									This innovative <strong>cutting edge technology</strong> will give yor guests an awesome experience.
+									Try it out now.
+								</p>
+							</div>
+						
+							<div class="col-md-4 col-md-offset-1 col-sm-6" data-scroll-reveal="enter from bottom and move 100px">
+								<div class="image-slider image-gallery" style="margin-top: 20px;">
+									<ul class="slides">
+										<li>
+											<picture>
+												<source srcset="./img/screenshots/share-guests-stories-11 inch-2.webp" type="image/webp">
+												<source srcset="./img/screenshots/share-guests-stories-11 inch-2.png" type="image/jpeg"> 
+												<img alt="App Screenshot" src="./img/screenshots/share-guests-stories-11 inch-2.png">
+											</picture>
+										</li>
+										<li>
+											<picture>
+												<source srcset="./img/screenshots/easy-and-fun-11 inch-1.webp" type="image/webp">
+												<source srcset="./img/screenshots/easy-and-fun-11 inch-1.png" type="image/jpeg"> 
+												<img alt="App Screenshot" src="./img/screenshots/easy-and-fun-11 inch-1.png">
+											</picture>
+										</li>
+										<li>
+											<picture>
+												<source srcset="./img/screenshots/day-night-mode-11 inch.webp" type="image/webp">
+												<source srcset="./img/screenshots/day-night-mode-11 inch.png" type="image/jpeg"> 
+												<img alt="App Screenshot" src="./img/screenshots/day-night-mode-11 inch.png">
+											</picture>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-xs-12" data-scroll-reveal="enter from bottom and move 100px">
+								<br />
+								<br />
+								<br />
+								<div class="text-center">
+									<a href="https://apps.apple.com/us/app/carebnb-smart-device/id1552657325" class="btn btn-primary btn-filled">
+										<i class="fab fa-apple"></i>
+										Download on the App Store
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+
+
 			
 				<section class="description">
 	
@@ -132,14 +209,6 @@
 					  </div>
 
 				</section>
-				
-
-			<!-- <section class="article-single">
-				<h2 class="main-title">Carebnb is the <strong>right choice</strong></h2>
-				<div class="container">
-					<div include-html="/includes/video.html" class="fullwidth-video"></div>
-				</div>
-			</section> -->
 			
 			<section lazy-include-html="/includes/section-get-notified.html" id="section-get-notified"></section>
 
@@ -155,6 +224,15 @@
 		<script src="/js/scripts.js?v=6"></script>
 		<script type="text/javascript">
 			initPage();
+		</script>
+
+		<link href="/css/flexslider.min.css" rel="stylesheet">
+		<script>
+		dynamicallyLoadJS([
+			"/js/jquery.flexslider-min.js"], () => {
+				$('#transform-ipad .image-slider').flexslider({ animation: "slide"});
+			}
+		)
 		</script>
 
   </body>

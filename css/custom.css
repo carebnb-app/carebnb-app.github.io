@@ -8,7 +8,7 @@ p.large-font{font-size:18px;line-height:32px;}
 p.medium-font{font-size:16px;line-height:28px;}
 .feature h4{font-weight:bold;padding-bottom:15px;}
 .alt-font{font-size:14px;}
-#section-smart-info-board-image-slider ul li picture img{border-radius: 30px;}
+.image-slider.image-gallery ul li picture img{border-radius: 30px;}
 .hero-slider .slides li{height:530px !important;}
 .overlay:before{background:#EB5757;}
 .bg-primary{background-color:#EB5757 !important;}
